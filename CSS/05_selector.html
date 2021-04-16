@@ -40,6 +40,28 @@
             h3 > a:active {  /* actice : 클릭하는 동안  */
                 color:orange;
             }
+            
+            /* 6. 속성 */
+            input[type="radio"]:hover + label {
+                font-weight:800;
+            }
+            input[checked] + label { /* [checked] 속성을 가지고 있는 input 태그의 바로 뒤 label태그 */
+                color:brown;
+            }
+            /* (:checked)라는 상태 선택 */
+            input[type="radio"]:checked + label { /* checked 상태의 radio(선택된 radio) */
+                color:limegreen;
+            }
+            
+            /* 7. 구조 */
+            ul > li:nth-of-type(1) { /* [ul > li ] : ul안에 있는 '모든' li  ////    :nth-of-type(1) : first-of-type   */
+                font-weight:900;
+            }
+            ul > li:nth-of-type(4n+1) {
+                color:red;
+            }
+            
+            
         </style>
     </head>
     <body>
@@ -78,10 +100,30 @@
         <h3><a href="https://google.com" >구글</a></h3>
     
     
+        <!-- 4. 속성 -->
+        <form>
+            <input id="yes" type="radio" name="agreement" value="yes">
+            <label for="yes">동의합니다.</label>
+            <input id="no" type="radio" name="agreement" value="no" checked>
+            <label for="no">동의하지 않습니다.</label>
+            <br>
+            <button>전송하기</button>
+            <input type="button" value="취소하기">
+        </form>
     
     
-    
-    
+        <!-- 5. 구조 선택자 -->
+        <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+            <li>JSP/Servelet</li>
+            <li>Spring</li>
+            <li>Portfolio</li>
+        </ul>
     
     
     
