@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>선택자</title>
+        <style>
+            /* 1. 부모 > 자식  :  상위요소 > 하위요소 */
+            /* ( table > tbody > tr > td )도 가능.   ////   <tbody>태그가 생략되어 있어도 ( table > tr ) 은 불가능    */
+            table > tbody {  
+            background-color: beige;
+            }
+            /* 2. 부모 후손 : 상위요소 하위요소 (하위요소 모두에게 적용하겠다.) */
+            table td {  /* table > td (불가능) */
+                color:chocolate;
+            }
+            /* 3. 형제 ~ 형제 : 일반 형제(모든 형제를 의미한다.) */
+            p ~ h1 {
+                color:violet;
+            }
+            /* 4. 행제 + 형제 : 인접 형제(붙어있는 행제만 의미) */
+            p + h1 {
+                color:aqua;
+            }
+            /* 5. 링크 반응 */
+            h3 > a { /* 부모 > 자식 */
+                color:#000;
+                text-decoration:none;
+            }
+            h3 > a:link { /* link : 방문 전(클릭하기 전) */
+                color:aqua;    
+            }
+            h3 > a:visited { /* visited : 방문 후 */
+                color:gray;
+            }
+            /* hover, active는 링크가 아니여도 사용할 수 있다. */
+            /* 두가지 모두 사용하려면 hover -> active 순서로 설정한다. */
+            h3 > a:hover {
+                color:fuchsia;
+            }
+            h3 > a:active {  /* actice : 클릭하는 동안  */
+                color:orange;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- 1. 부모,자식 살펴보기 -->
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>번호</td>
+                    <td>이름</td>
+                    <td>연락처</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>브레드</td>
+                    <td>010-1818-1818</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>초코</td>
+                    <td>010-2929-2929</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <!-- 2. 형제 살펴보기(형제 : 같은 수준의 요소) -->
+        <p>형제 살펴보기</p>
+        <h1>첫째</h1>
+        <h1>둘째</h1>
+        <h1>셋째</h1>
+    
+    
+        <!-- 3. 링크 반응 살펴보기 -->
+        <!-- 부모 / 자식 관계 -->
+        <h3><a href="https://naver.com" >네이버</a></h3>
+        <h3><a href="https://kakao.com" >카카오</a></h3>
+        <h3><a href="https://google.com" >구글</a></h3>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>

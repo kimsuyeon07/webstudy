@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Text</title>
+        <!-- 1) 구글폰트 : 웹 폰트 연결 [link] : 추가하는 위치 *주의* -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            
+            /* 2) 구글폰트 : 웹 폰트 연결 [link] : 추가하는 위치 *주의* */
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+            
+            body {
+                margin:0 auto;
+                padding:0 5%;
+            }
+            
+            p {
+                /* 1. 정렬 : left, rigth, center, justity */
+                text-align:center;
+                /* 2. 행 높이 */
+                line-height:25px;
+                /* 3. 들여쓰기 */
+                text-indent:50px;
+                /* 4. 밑줄(underline), 윗줄(overline), 취소선(line-through) */
+                text-decoration:underline;
+                /* 5. 그림자 */
+                /* text-shadow : 가로방향 세로방향 크기 색상 */
+                text-shadow: 5px 5px 1px silver, 3px 3px 1px yellow;
+                
+            }
+            
+            /*inline 요소는 블럭 레벨에 적용되는 css 속성을 처리하지 못한다.*/
+            span {
+                text-align:center;
+            }
+            
+            /* a 태그는 디폴트를 없애준다. */
+            a {
+                text-decoration:none;
+                color:#000;
+            }
+            
+            /* pre */
+            pre {
+                /* 1. font-size */
+                font-size:20px;
+                /* 2. style :기울임(italtic) 오블리크(oblique) */
+                font-style:italic;
+                /* 3. 글자의 무게 : 굵기 (lighter, normal, bold, bolder [OR] 100 ~ 800(100단위) ) */
+                font-weight:800;
+                /* 4. color */
+                color:#ebd9d9; /*글자색상*/  /* [Ctrl + e]단축키 : 색상코드 뽑을 수 있음. */
+                background-color:darkseagreen;
+                /* 5. 글꼴 (시스템에 설치된 글꼴) */
+                /* 설치된 글꼴이 있으면 사용되고, 없으면 시스템 기본 글꼴이 사용된다. */
+                font-family:'맑은 고딕 굵게', sans-serif;  /* [sans-serif] : 고딕계열 */
+                /* 6. 글꼴 (웹 폰트) */
+                /*
+                    1) link 태그를 추가하고 font의 font-family 지정
+                    2) @import를 차가하고 해당 font의 family 지정
+                */
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- p 태그는 '블럭 레벨' -->
+        <p>가나다라마바사아자차카타파하 아야어여오요우유으이 가나다라마바사아자차카타파하 아야어여오요우유으이 가나다라마바사아자차카타파하 아야어여오요우유으이 가나다라마바사아자차카타파하 아야어여오요우유으이</p>
+        
+        <!-- inline 요소는 블럭 레벨에 적용되는 css 속성을 처리하지 못한다.  -->
+        <span>가나다라 마바사아 자차카 타파하</span>  <br>
+        <a href="https://naver.com">네이버로 가자!</a>
+        
+        <pre>가나다라마바사아자차카타파하</pre>
+    </body>
+</html>
