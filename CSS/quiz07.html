@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz07</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
+    <style>
+        .gnb1 {
+            width:300px;
+            height: 50px;
+            
+            /* 플렉스 박스 */
+            display: flex;
+            justify-content:space-between;
+            
+            
+            /* ul의 기본 속성 없애기 */
+            list-style:none;
+            padding-left:0;
+            
+            /* 위, 아래의 line(테두리) */
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+        }
+        
+        .gnb1 > li {
+            /* padding: 10px 0; */
+            
+            color:lightgreen;
+            font-weight:800;
+            line-height:50px;
+            
+        }
+        
+        .gnb1 > li > a {
+            text-decoration: none;
+        }
+        
+        .gnb1 > li > a:hover {
+            color:green;
+            cursor: pointer;
+        }
+        
+        /*---------------------------------------*/
+        
+        .gnb2 {
+            width: 100vw;
+            height: 50px;
+            padding-left:0;
+            
+            display:flex;
+            justify-content: center;
+            
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            
+        }
+        .gnb2 > li {
+            list-style: none;
+            margin: 0 10px;
+            line-height: 50px;
+        }
+        .gnb2 > li:hover {
+            color: red;
+            font-weight:bold;
+            border-bottom:2px solid red;
+            cursor:pointer;
+        }
+        
+        
+        
+        
+        
+    </style>
+    
+    
+</head>
+<body>
+    <ul class="gnb1">
+        <li><a>메일</a></li>
+        <li><a>블로그</a></li>
+        <li><a>지식iN</a></li>
+        <li><a>쇼핑</a></li>
+        <li><a>Pay</a></li>
+        <li><a><i class="fas fa-play"></i>TV</a></li>
+    </ul>
+    
+    <br><br>
+    
+    <ul class="gnb2">
+        <li><a>증권 홈</a></li>
+        <li><a>시장정보</a></li>
+        <li><a>이슈</a></li>
+        <li><a>종목게시판</a></li>
+        <li><a>뉴스</a></li>
+        <li><a>MY종목보드</a></li>
+    </ul>
+</body>
+</html>
