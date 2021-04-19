@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Dispaly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
-        /* dispaly : 블록레벨의 타입.  */
+        /* dispaly : 블록레벨의 타입. <-> 인라인, 표시유무, 플렉싱 */
+        /* 화면에서 이미지와 이미지의  */
         img {  width:350px; }
         img:nth-of-type(2) { display: none; }
         .blind { 
@@ -18,14 +20,68 @@
             color:red;
         }
         
-        
         a.block_style {
             display: block; /* inline => block */
             width: 200px;
             height: 50px;
             text-align: center;
+            line-height: 50px; /* line-height : 행 높이 */
+            /* ↑ < 박스의 높이와 행높이를 동일하게 주면 "세로 가운데 정렬" 효과를 줄 수 있다 (한 줄만 가능) >  */
             background: limegreen;
             color: white;
+            text-decoration:none;
+            
+            margin-bottom: 20px;
+        }
+        
+        
+        a.inline-block-style {
+            display: inline-block; /* inline 배치되지만 block 요소를 사용할 수 있다. */
+            width: 200px;
+            height: 50px;
+            border-radius:5px;
+            background-color:lightskyblue;
+            color:white;
+            text-align:center;
+            line-height: 50px;
+            
+            margin-bottom: 20px;
+        }
+        
+        
+        
+        
+        
+        /* flex */
+        /*
+            1. 가로로 배치(수평 배치)할 요소들의 부모 요소에 display: flex; 속성을 주면 
+               자식 요소들이 쉽게 수평 배치된다.
+            2. 배치되는 축으로 주축(main-axis)과 교차축(cross-axis)이 있다.
+            3. 기본 주축은 x축이다.
+            4. 자식 ㅇ쇼두르의 margin은 없어진다. 
+            5. flex-wrap : 자식 요소들을 강제로 한 줄로 배치할 것인지 여러 줄로 니누어 배치할 것인지 설정 (오버플로우 설정)
+            6. flex-direation : 주축을 바꾸거나 배치 순서를 바꾸는데 주로 주죽을 바꾸는 용도로 사용
+            7. justify-content : 주축을 기준으로 배치 방법(정렬)
+            8. align-temts : 교차축을 기준으로 배치 방법
+        */
+        div.flex-style {
+            display: flex;
+            flex-wrap: wrap;        /* nowrap(기본값):한 줄,  wrap:여러줄 */
+            flex-direction: row; /* row(기본값):x축으로 배치, column:y축으로 배치 */
+            justify-content: center; /* space-between(사이 여백 일정하게), center */
+            align-items: center;
+            box-sizing: border-box;
+            width: 600px;
+            height: 600px;
+            padding:0;
+            border: 5px solid black;
+        }
+        div.flex-style > .child {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            
+            margin: -1px 0 0 -1px;
         }
         
     </style>
@@ -46,7 +102,34 @@
         <label><input type="radio" name="gender" value="female"><span>여성</span></label>
     </fieldset>
     
-    <div>여기는 <div>inline</div>처리합니다. </div>
+    <div>여기는 <div style="display:inline">inline</div>처리합니다. </div>
+    <div>
+        <a href="http://naver.com" class="block_style">
+            네이버로 바로가기
+        </a>
+    </div>
+    
+    <!-- inline-block -->
+    <div>
+        <a href="http://www.twitter.com" class="inline-block-style"><i class="fab fa-twitter"></i></a>
+        <a href="http://www.facebook.com" class="inline-block-style"><i class="fab fa-facebook-f"></i></a>
+        
+    </div>
+    
+    <!-- flex box -->
+    <div class="flex-style">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+    </div>
+    
     
 </body>
 </html>
