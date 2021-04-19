@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visibility</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+        }
+        span > img {
+            visibility: hidden;
+        }
+        span:hover > img {
+            visibility: visible;
+        }
+        .box1 { margin-bottom: 20px;}
+        
+        .answer {
+            visibility:hidden;
+        }
+        #outer-answer:hover {
+            visibility: visible;
+        }
+        .check:hover + .answer {
+            visibility: visible;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img alt="강아지" src="images/dog.jpg">
+        <span><img alt="독수리" src="images/eagle.jpg"></span>
+        <img alt="고슴도치" src="images/hedgehog.jpg">
+    </div>
+    
+    <div>
+        <h2>다음 중 블록레벨이 아닌 태그는?</h2>
+        <ol>
+            <li>div</li>
+            <li>a</li>
+            <li>p</li>
+            <li>ul</li>
+        </ol>
+        <p>    
+            정답 : [ <span id="outer"><span class="answer">2</span></span> ] <br>
+            <span class="check">정답보기</span> &emsp; <span class="answer">2</span>
+        </p>
+    </div>    
+    
+    
+</body>
+</html>

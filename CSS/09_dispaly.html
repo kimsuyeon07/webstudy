@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dispaly</title>
+    <style>
+        /* dispaly : 블록레벨의 타입.  */
+        img {  width:350px; }
+        img:nth-of-type(2) { display: none; }
+        .blind { 
+            display: none; 
+        }
+        fieldset {
+            width: 200px;
+        }
+        
+        input[type='radio']:checked + span {
+            color:red;
+        }
+        
+        
+        a.block_style {
+            display: block; /* inline => block */
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            background: limegreen;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img alt="강아지" src="images/dog.jpg">
+        <img alt="독수리" src="images/eagle.jpg">
+        <img alt="고슴도치" src="images/hedgehog.jpg">
+    </div>
+    
+    <br><br>
+    
+    <fieldset>
+        <legend class="blind">성별</legend>
+        <label><input type="radio" name="gender" value=""><span>선택</span></label>
+        <label><input type="radio" name="gender" value="male"><span>남성</span></label>
+        <label><input type="radio" name="gender" value="female"><span>여성</span></label>
+    </fieldset>
+    
+    <div>여기는 <div>inline</div>처리합니다. </div>
+    
+</body>
+</html>
