@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding:0;
+        }
+        .box {
+            margin:0 auto;
+            padding:0;
+            width:600px;
+            height:600px;
+        }
+        .box > div {
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            border:1px solid black;
+            margin: -1px 0 0 -1px;
+            
+            float:left;
+            
+            text-align:center;
+            line-height:300px;
+            color:#cda8dd;
+            font-weight:800;
+            font-size:35px;
+        }
+        
+        .box2 {
+            margin: 0 auto;
+            padding:0;
+            
+            width: 600px;
+            height: 450px;
+            border:1px solid lightgray;
+            box-sizing: border-box;
+            
+            clear:left;
+        }
+        .box2 > div {
+            float: left;
+            margin: 24px;
+            padding:0;
+            box-sizing: border-box;
+            
+            text-align: center;
+            line-height: 190px;
+        }
+        .box2 > div:nth-child(1), .box2 > div:nth-child(2) {
+            width: 263px;
+            height: 190px;
+            background-color:beige;
+        }
+        .box2 > div:nth-child(1) {
+            margin-right: 0;
+        }
+        .box2 > div:nth-child(3) {
+            width: 550px;
+            height: 190px;
+            background-color: beige;
+            margin-top: 0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div><span>봄</span></div>
+        <div><span>여름</span></div>
+        <div><span>가을</span></div>
+        <div><span>겨울</span></div>
+    </div>
+    <br><br>
+    <div class="box2">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </div>
+    <br><br>
+</body>
+</html>
