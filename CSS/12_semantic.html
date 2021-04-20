@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
+    <style>
+        /* 
+            의미있는 태그 : semantic태그
+            1. 레이아웃을 의미 있게 표준화 한 태그
+            2. 소스코드를 분리해서 작성할 수 있다. (가독성 및 분석이 쉬워진다)
+            3. 최신 HTML5 표준 ()
+            4. section 태그와 article 태그는 자유롭게 
+        */
+        
+        /*reset*/
+        body, div, ul, h3, p { margin:0; padding:0; list-style:none; }
+        
+        /* 네비게이션 */
+        header {}
+        nav { 
+            margin: 0 auto;
+            width: 1400px; 
+            position:relative;
+            height:450px;
+            background-image: url(images/blackboard.jpg);
+            background-size: cover;
+            color: white;
+        }
+        nav > ul {
+            /* 메뉴의 가로 배치를 위해서 각 메뉴 부모 요소(ul)에 overflow: hidden; */
+            overflow: hidden;
+            position: absolute;
+            border-bottom: 0.5px solid #767676;
+            width: 100%;
+        }
+        nav > ul > li {
+            display: inline-block;
+            padding: 30px 0;
+            margin: 0 15px;
+            font-weight: 300;
+        }
+        nav > ul > li:nth-child(1) {
+            margin-left: 30px;
+        }
+        nav > ul > li:hover {
+            font-weight: 400;
+            color: red;
+            cursor: pointer;
+            border-bottom: 2px solid red;
+        } 
+        .search {
+            position: absolute;
+            right: 30px;
+            margin-top: 30px;
+            
+        }
+        
+        /* 본문 */
+        section {
+            margin: 10px auto;
+            width: 1400px;
+            height: 250px;
+            overflow:hidden;
+        }
+        section > article {
+            text-align: center;
+            color: white;
+            width: 49.5%;
+            height: 100%;
+            padding-top: 90px;;
+        }
+        section > article:nth-of-type(1) { 
+            float: left;
+            background-image: url(images/lion.jpg);
+            background-size: cover;
+        }
+        section > article:nth-of-type(2) { 
+            float: right;
+            background-image: url(images/dog.jpg);
+            background-size: cover;
+        }
+        
+        /* 사이드메뉴 */
+        aside {
+            position: fixed;
+            right: 0;
+            top: 35%;
+        }
+        aside > div {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding-top: 10px;
+            margin-top:-1px; 
+            background-color: white;
+        }
+        
+        /* 푸터 */
+        footer {
+            margin: 0 auto;
+            text-align: center;
+            border-top: 1px solid lightgray;
+            width: 1400px;
+            position: absolute;
+            bottom: 0;
+            background-color:white;
+        }
+        footer > p {
+            display: inline-block;
+            margin: 30px 50px;
+            font-weight: 800;
+        }
+        footer > p:hover {
+            cursor: pointer;
+            color: red;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <!-- 전체화면 -->
+    <div class="container">
+       
+        <!-- 사이트 상단 -->
+        <header>
+           <!-- 네비게이션 -->
+           <nav>
+               <ul id="gng">
+                   <li>Models</li>
+                   <li>Find &amp; Buy</li>
+                   <li>Electromobility</li>
+                   <li>Services</li>
+                   <li>Magazine</li>
+               </ul>
+               <div class="search">
+                   검색 <input type="text" name="quiery" value="검색어를 입력하세요.">
+                   <button><i class="fas fa-search fa-1x"></i></button>
+               </div>
+           </nav>
+            
+        </header>
+        
+        
+        <!-- 본문 -->
+        <section>
+           <!-- 세부구역 (여러개 사용 가능) -->
+           <article>
+               <h3>THE 5</h3>
+               <p>BMW 5 series</p>
+           </article>
+           <article>
+               <h3>THE 7</h3>
+               <p>BMW 7 series</p>
+           </article>
+        </section>
+        
+        
+        <!-- 사이드 메뉴 -->
+        <aside>
+            <div>
+                <i class="fas fa-map-marker"></i>
+                <P>딜러위치</P>
+            </div>
+            <div>
+                <i class="far fa-file-alt"></i>
+                <P>가격표</P>
+            </div>
+        </aside>
+        
+        
+        <!-- 페이지 하단 -->
+        <footer>
+            <p>시승신청</p>
+            <p>카탈로그 다운로드</p>
+        </footer>
+    </div>
+</body>
+</html>
