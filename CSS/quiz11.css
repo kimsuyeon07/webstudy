@@ -6,7 +6,6 @@ input {
     outline: none;
 }
 
-
 .container {
     margin: 0 auto;
     margin-top: 80px;
@@ -65,7 +64,8 @@ section button {
     width:13px;
     height: 13px;
     border-radius: 100px;
-    border: 1px solid #666;
+    border: 1px solid #cccccc;
+    background-color:white;
     top:-13px;
 }
 .login_append > .inp_chk > input[type='checkbox']:checked::after {
