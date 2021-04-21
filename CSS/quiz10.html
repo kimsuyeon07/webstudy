@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="quiz10.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- 전체 컨테이너 -->
+    <div class="container">
+        <!-- LOGO : NAVER -->
+        <header>
+            <div class="logo">
+                <a href="http://www.naver.com">
+                    <img alt="NAVER" src="images/naver.png" width="250px">
+                </a>
+            </div>
+        </header>
+        <!-- 본문 영역 -->
+        <section>
+            <!-- 1. 아이디, 비밀번호, 로그인 버튼 -->
+            <article class="con1">
+               <form method="post" action="https://nid.naver.com/nidlogin.login">
+                    <input type="text" placeholder="아이디">
+                    <input type="password" placeholder="비밀번호" >
+                    <button><a>로그인</a></button>
+                </form>
+                <!-- 로그인상태유지, IP보안 -->
+                <div class="sub_con1">
+                    <div class="t_box t_box1">
+                       <a href="#">
+                            <i class="far fa-check-circle"></i>
+                            로그인 상태 유지
+                        </a>
+                    </div>
+                    <p class="t_box t_box2">IP 보안 <span>ON</span></p>
+                </div>
+            </article>
+            
+            <!-- 2.  -->
+            <article class="con2">
+                <p>더욱 간편한 로그인</p>
+                <div>
+                    <button class="btn_2">QR코드 로그인</button>
+                    <button class="btn_2">일회용 번호 로그인</button>
+                </div>
+                <div class="sub_con2">
+                   <p>
+                        <a>아이디 찾기</a>
+                        <span> | </span>
+                        <a>비밀번호 찾기</a>
+                        <span> | </span>
+                        <a>회원가입</a>
+                    </p>
+                </div>
+            </article>
+            
+            <!-- 3. 배너 : img 링크 -->
+            <article class="banner">
+                <a href="#">
+                    <img alt="banner1" src="images/upload_NaverV_cover.png" width="460px" height="160px" >
+                </a>
+            </article>
+        </section>
+        <!-- 푸터 -->
+        <footer>
+            <div class="f_text">
+                <p>
+                    <a>이용약관</a>
+                    <span>|</span>
+                    <a><strong>개인정보처리방침</strong></a>
+                    <span>|</span>
+                    <a>책임의 한계와 법적고지</a>
+                    <span>|</span>
+                    <a>회원정보 고객센터</a>
+                </p>
+            </div>
+            <div class="f_copy">
+                <p>
+                    <a href="https://www.navercorp.com/" target="_blank">NAVER</a>
+                    Copyright &copy; 
+                    <a href="https://www.navercorp.com/" target="_blank">NAVER Corp</a>
+                    . All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,164 @@
+/* reset */
+html, body {
+    margin: 0 auto; padding: 0;
+    font-family: Helvetica, Dotum, sans-serif;
+}
+p { margin: 0 auto; padding: 0; }
+input {border-style: none; margin:0; padding:0; box-sizing: border-box;}
+button {cursor:pointer;}
+a {text-decoration: none; color: black; cursor: pointer;}
+
+body {background-color: #f7f7f7;}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    width: 768px;
+}
+/* LOGO */
+header { margin: 100px 30px 25px 30px; }
+.logo { }
+/* 본문 */
+section {
+    margin: 0 auto;
+    text-align: center;
+    width: 460px;
+}
+/* 본문 : CON1 */
+.con1 {}
+.con1 input, .con1 button {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: 1px solid lightgray;
+    margin-bottom: 8px;
+    padding-left:10px;
+}
+.con1 input:focus {
+    border: 1px solid #1ec41e;
+    outline:none;
+    
+}
+.con1 button {
+    background-color: #1ec41e;
+    border: 1px solid #19ba43;
+    font-weight: 800;
+    font-size: 15px;
+}
+.con1 button a { 
+    color: white;
+}
+.con1 .sub_con1 {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 14px;
+}
+.con1 .sub_con1 .t_box {
+    float:left;
+    margin: 8px 0;
+    color: #666;
+}
+.con1 .sub_con1 .t_box a {
+    color: #666;
+}
+.con1 .sub_con1 .t_box2 {
+    float: right;
+}
+.con1 .sub_con1 .t_box2 span {
+    color: #1ec41e;
+    font-weight:700;
+    font-size: 16px;
+    cursor: pointer;
+}
+.con1 .sub_con1 .t_box1 a:focus-within {
+    color: #1ec41e;
+    cursor: pointer;
+}
+/* 본문 : CON2 */
+.con2{
+    clear: left; 
+    margin: 35px 0;
+}
+.con2 > p:nth-child(1) {
+    font-size:18px;
+    font-weight:600;
+    letter-spacing: -.8px;
+}
+.con2 > div {
+    display: flex;
+    justify-content: space-between;
+}
+.con2 > div > button {
+    margin-top: 20px;
+    width: 48%;
+    height: 50px;
+    border: 1px solid #1ec41e;
+    outline:none;
+    background-color: white;
+    font-size: 15px;
+    font-weight:600;
+}
+.con2 .sub_con2 {
+    margin-top:18px;
+}
+.con2 .sub_con2 p {
+    font-size: 14px;
+    font-weight: 300;
+}
+.con2 .sub_con2 p a {
+    color:#9b9b9b;
+}
+.con2 .sub_con2 p span {
+    font-size: 13px;
+    margin: 0 3px;
+    color: #d2d2d2;
+}
+
+/* 본문 : 배너 */
+.banner {
+    margin-top: 55px;
+}
+
+
+/* 푸터 */
+footer {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 11px;
+}
+footer a {
+    color:#333;
+}
+footer .f_text a:hover, footer .f_copy a:hover {
+    color: #1ec41e;
+    text-decoration:underline;
+    cursor: pointer;
+}
+footer .f_copy a:nth-child(1) {
+    font-size: 14px;
+    color: #1ec41e;
+    font-weight:900;
+}
+footer .f_copy a:nth-child(2) {
+    font-weight:800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
