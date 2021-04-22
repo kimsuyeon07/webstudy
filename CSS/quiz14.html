@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz14</title>
+    
+    <style>
+        /* reset */
+        html, body {margin: 0 auto; padding: 0;}
+        
+        #container {
+            overflow: hidden;
+            width: 960px;
+            margin: 0 auto;
+            
+        }
+        #container > .product-list {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        #container > .product-list > div {
+            position: relative;
+        }
+        #container > .product-list > div > .img-box {
+            width: 300px;
+            height: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            /*이미지를 뒤로 보내기 위해서 z-index값을 낮게 설정*/
+            z-index: 1;
+        }
+        #box1 > .img-box {
+            background-image: url(images/fruit1.jpg) ;
+        }
+        #box2 > .img-box {
+            background-image: url(images/fruit2.jpg) ;
+        }
+        #box3 > .img-box {
+            background-image: url(images/fruit3.jpg) ;
+        }
+        .t-box {
+            width: 300px;
+            height: 200px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            padding-top: 23px;
+            /*설명을 앞으로 보내기 위해서 z-index값을 높게 설정*/
+            z-index: 2;
+            position: absolute;
+            top: 200px;
+            opacity: 0; /* 안보이게 하겠다! */
+            /* *** */
+            transition-property: all; /* opacity, transform */
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            
+        }
+        
+        
+        
+        .img-box:hover + .t-box {
+            opacity: 1; /* 보이게 하겠다! */
+            transform: translateY(-200px); /* 위로 200px 올라간다. */
+        }
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div class="product-list">
+            <div id="box1">
+                <div class="img-box"></div>
+                <div class="t-box">
+                    <h2>과일1</h2>    
+                    <p>맛있는 과일</p>
+                    <p>가격 : 10,000원</p>
+                </div>
+
+            </div>
+            <div id="box2">
+                <div class="img-box"></div>
+                <div class="t-box">
+                    <h2>과일2</h2>    
+                    <p>달콤한 과일</p>
+                    <p>가격 : 20,000원</p>
+                </div>
+            </div>
+
+            <div id="box3">
+                <div class="img-box"></div>
+                <div class="t-box">
+                    <h2>과일3</h2>    
+                    <p>새콤한 과일</p>
+                    <p>가격 : 30,000원</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
