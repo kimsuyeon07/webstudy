@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz21</title>
+    
+    <style>
+        html, body {margin: 0; padding: 0;}
+        .container {width: 500px; margin: 0 auto;}
+        
+        
+        table {width: 100%;}
+        caption {
+            padding: 20px;
+            font-size: 25px;
+            font-weight: 600;
+            color: green;
+        }
+        th {
+            padding: 10px 0;
+            background-color: lightgray;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        tr td {
+            padding: 5px 5px 8px;
+        }
+        tr > td {
+            width: 70px;
+        }
+        
+        /* input, select */
+        input, select {
+            margin: 0;
+            padding: 0;
+            padding-left: 5px;
+            border: 1px solid lightgray;
+            height: 22px;
+            outline: none;
+        }
+        input[type='radio'], input[type='checkbox'] {
+            height: auto;
+        }
+        input:focus {
+            border: 1px solid red;
+            background-color: white;
+        }
+        
+        
+        /* 성별 _라디오 */
+        .gender label {padding: 0 10px 0 0; }
+        
+        /* 연락처 박스 */
+        .int_phone {
+            display: flex; 
+            margin-bottom: 10px;
+        }
+        .int_phone select, .int_phone input {
+            width: 20%;
+        }
+        .int_phone span {
+            padding: 0 5px;
+        }
+        
+        /* 프로필사진 */
+        .int_profile input {
+            border: none;
+            height: auto;
+        }
+        
+        /* 하단의 버튼 */
+        .under_btn {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .under_btn button {
+            margin: 0 2px;
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <table>
+            <caption>회원가입 폼</caption>
+            <tr><th colspan="2">필수정보</th></tr>
+            <tr>
+                <td> <label for="id"> 아이디 </label> </td>
+                <td>
+                    <form method="post">
+                        <input type="text" name="id" id="id">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="pw"> 비밀번호 </label> </td>
+                <td>
+                    <form method="post">
+                        <input type="password" name="pw" id="pw">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="pw2"> 비밀번호확인 </label> </td>
+                <td>
+                    <form method="post">
+                        <input type="password" name="pw2" id="pw2">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="name"> 이름 </label> </td>
+                <td>
+                    <form method="post">
+                        <input type="text" name="user" id="name">
+                    </form>
+                </td>
+            </tr>
+            <tr class="gender">
+                <td> 성별 </td>
+                <td>
+                    <input id="no_g" type="radio" name="gender" value="no_gender" checked>
+                    <label for="no_g">선택안함</label>
+                    <input id="man" type="radio" name="gender" value="male">
+                    <label for="man">남성</label>
+                    <input id="woman" type="radio" name="gender" value="female">
+                    <label for="woman">여성</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="user_phone">연락처</label></td>
+                <td>
+                    <div class="int_phone">
+                        <select name="phone" id="user_phone">
+                            <option value="010">010</option>
+                            <option value="02">02</option>
+                            <option value="032">032</option>
+                            <option value="031">031</option>
+                        </select>
+                        <span> - </span>
+                        <input type="text" name="phone2" maxlength="4">
+                        <span> - </span>
+                        <input type="text" name="phone3" maxlength="4">
+                    </div>
+                </td>
+            </tr>
+            
+            <tr> <th colspan="2">선택정보</th> </tr>
+            <tr>
+                <td><label for="nic">닉네임</label></td>
+                <td><input type="text" name="nicname" id="nic"> </td>
+            </tr>
+            <tr>
+                <td><label for="user_email">이메일</label></td>
+                <td>
+                    <div class="int_email">
+                        <input type="text" name="email_first" maxlength="10" id="user_email">
+                        <span> @ </span>
+                        <select name="email" id="user_email">
+                            <option value="@">도메인입력/선택</option>
+                            <option value="naver">naver.com</option>
+                            <option value="daum">daum.net</option>
+                            <option value="gmail">gmail.com</option>
+                            <option value="nate">nate.com</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td> 이메일수신 </td>
+                <td>
+                    <input id="e_ok" type="radio" name="email_send" value="email_send_ok" checked>
+                    <label for="e_ok">수신</label>
+                    <input id="e_no" type="radio" name="email_send" value="email_send_no">
+                    <label for="e_no">미수신</label>
+                </td>
+            </tr>
+            <tr>
+                <td> SNS수신 </td>
+                <td>
+                    <input id="s_ok" type="radio" name="sns_send" value="sns_send_ok" checked>
+                    <label for="s_ok">수신</label>
+                    <input id="s_no" type="radio" name="sns_send" value="sns_send_no">
+                    <label for="s_no">미수신</label>
+                </td>
+            </tr>
+            <tr>
+                <td>취미 활동</td>
+                <td>
+                    <input type="checkbox" name="hobbies" value="book">
+                    <span>독서</span>
+                    <input type="checkbox" name="hobbies" value="fishing">
+                    <span>낚시</span>
+                    <input type="checkbox" name="hobbies" value="swimming">
+                    <span>수영</span>
+                </td>
+            </tr>
+            <tr class="int_profile">
+                <td>프로필사진</td>
+                <td>
+                    <input type="file" name="profile_img" value="filechoice">
+                </td>
+            </tr>
+            <tr class="under_btn">
+                <td colspan="2">
+                    <button>회원가입</button>
+                    <button>다시작성</button>
+                </td>
+            </tr>
+            
+            
+        </table>
+       
+        
+       
+       
+        
+    </div>
+    
+    
+    
+</body>
+</html>

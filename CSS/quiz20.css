@@ -1,0 +1,95 @@
+/* reset */
+html, body, div, h1, h3, p, ul, li {margin: 0; padding: 0;}
+li {list-style-type: none;}
+
+/*Main _CSS*/
+.container {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {width: 100%;}
+.top_img {
+    width: 100%;
+    height: 100px;
+}
+.top_img > h1 {
+    line-height: 100px;
+}
+.gnb {width: 100%;}
+.gnb > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.gnb > ul > li {
+    display: inline-block;
+    width: 19%;
+    padding: 15px 0;
+}
+.gnb > ul > li:hover {
+    color: red;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+}
+
+/* 본문영역 */
+.con {overflow: hidden; margin-top: 20px; width: 100%;}
+section {
+    float: left;
+    text-align: left;
+    width: 70%;
+}
+section > h3 { margin-bottom: 20px; padding-top: 20px;}
+section article {
+    display: inline-block;
+    width: 48%;
+    height: 100px;
+    border: 1px solid black;
+    line-height: 50px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+section article h3, section article p {
+    padding-left: 10px;
+}
+section article p {
+    padding-top: 0;
+    margin: 0;
+}
+aside {
+    float: right;
+    display: block;
+    width: 25%;
+    height: 450px;
+    border: 1px solid;
+    text-align: left;
+}
+aside h3, aside p {
+    padding: 20px 10px 0;
+}
+
+
+/* 푸터 영역 */
+footer {clear:both; width: 100%;}
+.f_info {
+    margin-top: 5px;
+    background-color: #d4d4d4;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

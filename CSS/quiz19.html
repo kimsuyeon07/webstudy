@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Quiz19</title>
+    
+    <style>
+        html, body, div, a, p {margin: 0; padding: 0; text-decoration: none;}
+        .container {
+            margin: 0 auto;
+            box-sizing: border-box;
+            width: 500px;
+            font-size: 18px;
+        }
+        .table-box {width: 100%; background-color: beige;}
+        .table-box .box-head {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            padding: 10px 0 13px;
+            background-color: lightgray;
+            font-size: 26px; 
+        }
+        .table-box .box-body {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+        .table-box .box-body .section {
+            width: 47.5%;
+        }
+        
+        /* 공통영역 CSS */
+        .input-box, button {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border-radius: 5px;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        button {
+            font-size: 15px;
+            cursor: pointer;
+            border: 1px solid lightgray;
+        }
+        
+        /* l_box */
+        .input-box {
+            padding-left: 20px;
+            line-height: 44px;
+            background: #efefef;
+            border: 1px solid #e3e3e3;
+        }
+        .input-box input {
+            border: none;
+            outline: none;
+            background: #efefef;
+        }
+        .input-box i { font-size: 16px; color: #b2b2b2;}
+        
+        .l_box > div > p {
+            text-align: right;
+            font-size: 16px;
+            padding-bottom: 20px;
+            color: #b5b5b5;
+        }
+        .l_box button {
+            width: 60%;
+            float: right;
+            background-color: #bf0404;
+            color: white;
+            font-weight: 500;
+        }
+        
+        /* r_box */
+        .r_box {}
+        .r_box button {
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .r_box button i {padding-right: 5px;}
+        
+        .r_box .btn_t:hover {
+            border: none;
+            background-color: skyblue;
+            color: white;
+        }
+        .r_box .btn_f:hover {
+            border: none;
+            background-color: darkblue;
+            color: white;
+        }
+        .r_box .btn_g:hover {
+            border: none;
+            background-color: red;
+            color: white;
+        }
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="table-box">
+            <div class="box-head"> WECOME </div>
+            <div class="box-body">
+                <div class="section l_box"> 
+                    <div class="l_box1">
+                        <div class="input-box">
+                            <i class="far fa-smile"></i>
+                            <input type="text" placeholder="User or Email">               
+                        </div>
+                        
+                        <p>Forgot your username?</p>
+                    </div>
+                    <div class="l_box2">
+                        <div class="input-box">
+                            <i class="fas fa-unlock-alt"></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <p>Forgot your username?</p>
+                    </div>
+                    <button><a>LOGIN NOW</a></button>
+                </div>
+                <div class="section r_box"> 
+                    <a href="https://twitter.com/"><button class="btn_t"><i class="fab fa-twitter"></i>Log in with Twitter</button></a>
+                    <a href="https://www.facebook.com/"><button class="btn_f"><i class="fab fa-facebook-f"></i>Log in with Facebook</button></a>
+                    <a href="https://www.google.com/"><button class="btn_g"><i class="fab fa-google-plus-g"></i>Log in with Google+</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

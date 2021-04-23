@@ -56,3 +56,5 @@
    4) E:first-of-type   첫 번째 타입 E(요소)
    5) E:last-of-type    마지막 타입 E
    6) E:nth-of-type(n)  n번째(수열) 타입 E
+
+
