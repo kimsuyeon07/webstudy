@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*  
+			DOM
+			1. Document Object Model, 문서 객체 모델
+			2. HTML문서의 구성요소를 획득, 추가, 변경, 삭제 등의 작업을 수행한다.
+			3. HTML문서의 구성요소 알아내기
+				1) document.getElementById('아이디');
+				2) document.getElementsByClassName('클래스');
+				3) document.getElementsTagName('태그');
+				4) document.querySelector('선택자(selector)');
+				5) document.querySelectorAll('선택자(selector)');
+			4. 주요 속성
+				1) textContent : 내부 텍스트
+				2) innerHTML : 내부 HTML태그
+				3) style : CSS
+				4) attribute : 속성
+					(1) setAttribute(속성, 값) : 속성값을 부여
+					(2) getAttribute(속성) : 속성값을 반환
+		*/
+	</script>
+	<script>
+	/* head의 script영역  */
+	// var a = document.getElementById('naver-link');
+	// a.textcontent = '네이버로 이동'; // null.textContent = '네이버로 이동';  [ 순서대로 읽어들이기 때문에 오류가 뜬다. ]
+	</script>
+</head>
+<body>
+	<a id = "naver-link"></a>
+	<br>
+	<img id="img">
+	<script>
+		/* body의 script영역 */
+		var a = document.getElementById('naver-link');
+		// 변수 a에 <a id = "naver-link"></a> 저장된다.
+		a.textContent = '네이버로 이동';              // 내용을 삽입하고자 할 때 [ textContent 사용 ]
+		// a.innerHTML = '<strong>네이버로 이동</strong>';  // 태그가 포함되어 있을 경우는 [ innerHTML 사용 ]
+		// a.style.color = 'red';  // inline에 삽입된(태그 내부에 직접적으로 적용하는) style은 무조건 적으로 반영된다.
+		// alert(a.getAttribute('id'));
+		a.setAttribute('href', 'https://www.naver.com');
+		
+		// img태그에 이미지 넣기
+		var img = document.getElementById('img');
+		img.setAttribute('src', 'https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png');
+		
+	</script>
+</body>
+</html>
