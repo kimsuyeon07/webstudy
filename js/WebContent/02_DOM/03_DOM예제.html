@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM 예제</title>
+</head>
+<body>
+	<h1 id="title" class="hello">안녕하세요 :)</h1>
+	
+	<div id="container" class="wap">
+		<div id="box1" class="box">박스1</div>
+		<div id="box2" class="box">박스2</div>
+		<div id="box3" class="box">박스3</div>
+	</div>
+	
+	
+	<script>
+	
+	/* ----------------------------------------------------------------------------------------- */
+	
+	/*
+		// [ <h1 id="title" class="hello">안녕하세요 :)</h1> ] 태그 선택하는 방법
+		document.getElementById('title');
+		document.queryseletor('#title');
+		document.getElementByTagName('h1')[0]; // [0] : html안의 모든 <h1>태그 중 인덱스번호 '0'번의 데이터값을 가져와라
+		document.getElementByClassName('hello')[0];  // class 또한 여러개를 만들 수 있기 때문에 인덱스번호를 부여할 수 있다.
+		document.queryselectorAll('h1')[0];
+		document.queryselectorAll('.hello')[0];
+	*/
+		
+		console.log(document.getElementById('title'));
+		//console.log(document.querySeletor('#title'));
+		console.log(document.getElementsByTagName('h1')[0]);
+		console.log(document.getElementsByClassName('hello')[0]);
+		console.log(document.querySelectorAll('h1')[0]);
+		console.log(document.querySelectorAll('.hello')[0]);
+		
+		// 삭제 방법
+		// 1. 삭제할 요소 알아내기
+		var deleteElement = document.getElementById('title');  // 가장 안전한 방법 중 하나
+		// 2. 부모요소 알아낸 후, 삭제 진행
+		// document.body.removeChild(deleteElement);
+		deleteElement.parentNode.removeChild(deleteElement);
+		
+		/* ----------------------------------------------------------------------------------------- */
+		// Quiz
+		// 조회
+		console.log(document.getElementById('container'));
+		console.log(document.querySelector('#box1'));
+		console.log(document.getElementsByClassName('box')[1]);	
+		console.log(document.querySelectorAll('.box')[2]);
+	
+		// 삭제
+		var deleteElement_div = document.getElementById('box2');
+		deleteElement_div.parentNode.removeChild(deleteElement_div);
+		
+		/* ----------------------------------------------------------------------------------------- */
+		
+		
+		
+	
+		
+		
+		
+	</script>
+</body>
+</html>

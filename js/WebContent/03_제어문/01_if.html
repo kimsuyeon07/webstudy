@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h3 id="title"></h3>
+	<script>
+		if (confirm('제목을 입력할까요?')) {
+			var title = prompt('제목을 입력하세요.');
+			document.getElementById('title').textContent = title;
+		} else {
+			alert('제목 입력이 취소되었습니다.');
+		}
+	</script>
+	
+	
+	<ul>
+		<li>이름 : <span id="name"></span></li>
+		<li>평균 : <span id="average"></span></li>
+		<li>학점 : <span id="grade"></span></li>
+	</ul>
+	<script>
+		// 이름, 국어, 영어, 수학 점소를 입력받아서
+		// 화면에 평균과 학점을 계산하여 출력하시오.
+		
+		var name = prompt('이름을 입력하세요.');
+		var kor = prompt('국어 성적을 입력하세요.');
+		// var kor = Number(prompt('국어 성정을 입력하세요.')); 로 형변환시켜서 데이터를 받을 수 있다.
+		var eng = prompt('영어 성적을 입력하세요.');
+		var math = prompt('수학 성적을 입력하세요.');
+		// 2. 평균 구하기
+		var total = Number(kor) + Number(eng) + Number(math);
+		var avg = parseFloat( total / 3.0 );
+		// 3. 학점 구하기
+		if (avg >= 90) {
+			var grade = 'A학점';
+		} else if (avg >= 80) {
+			var grade = 'B학점';
+		} else if (avg >= 70) {
+			var grade = 'C학점';
+		} else if (avg >= 60) {
+			var grade = 'D학점';
+		} else {
+			var grade = 'F학점';
+		}
+		// 4. ul태그에 삽입
+		document.getElementById('name').textContent = name;
+		document.getElementById('average').textContent = avg;
+		document.getElementById('grade').textContent = grade;
+		
+	</script>
+	
+	
+	
+</body>
+</html>

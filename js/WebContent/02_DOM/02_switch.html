@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>switch문</title>
+	<!-- 자바스크립트의 switch문은 실수타입, 부울린타입도 사용이 가능하다. -->
+</head>
+<body>
+	<div id="result"></div>
+	<script>
+		var score = prompt('점수를 입력하세요.');
+		// 1. 자바에서 배운 대로 해보기.
+	/*
+		var grade;
+		switch (parseInt(score / 10)) {  // switch문에 올 수 있는 type : int, String
+		case 10: case 9: 
+			grade = 'A학점'; break;
+		case 8:
+			grade = 'B학점'; break;
+		case 7:
+			grade = 'C학점'; break;
+		case 6:
+			grade = 'D학점'; break;
+		default:
+			grade = 'F학점';
+		}
+	*/
+		// 2. 자바스크립트용으로 해 보기. (case문의 크기 비교가 가능하다.)
+		switch (true) {
+		case score >= 90: grade = 'A'; break;
+		case score >= 80: grade = 'B'; break;
+		case score >= 70: grade = 'C'; break;
+		case score >= 60: grade = 'D'; break;
+		default: grade = 'F';
+		}
+		
+		// 요소삽입
+		document.getElementById('result').innerHTML = '<h3>학점 : ' + grade + '</h3>';
+		
+	</script>
+	
+</body>
+</html>

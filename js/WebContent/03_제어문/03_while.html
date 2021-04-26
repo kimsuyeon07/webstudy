@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	
+	
+	<!-- 1. -->
+	<div id="one-to-ten"></div>
+	<script>
+	/*  방법 1.
+		var num = 1;
+		var result = '';
+		while (num <= 10) {
+			result += num + '<br>';
+			num++;
+		}
+		document.getElementById('one-to-ten').innerHTML = result;
+	*/ 
+		/* 방법 2. */
+		var num = 1;
+		while (num <= 10) {
+			document.getElementById('one-to-ten').innerHTML += num + '<br>';
+			num++;
+		}
+	</script>
+	
+	
+	
+	<!-- 2. -->
+	<div id="list1"></div>
+	<script>
+		// 방법.1 
+		// 2. 1) ul부터 만들기
+		var ul = document.createElement('ul');
+		// 2. 2) 요소 삽입
+		document.getElementById('list1').appendChild(ul);
+		// 2. while문 삽입
+		var n = 1;
+		while (n <= 5) {
+			var li = document.createElement('li');
+			li.textContent = n;
+			ul.appendChild(li);
+			n++;
+		}
+	/*
+		// 방법.2 
+		var result = '<ul>';
+		var n = 1;
+		while (n <= 5) {
+			result += '<li>' + n; // + '</li>' : 생략이 가능하다
+			n++;
+		}
+		document.getElementById('list1').innerHTML = result;
+	*/
+	</script>
+	
+	
+	
+	<!-- 3. -->
+	<div id="select-box">
+	<!-- 
+		<select name = "mm">
+			<option value = "1">1</option>
+			<option value = "2">2</option>
+			<option value = "3">3</option>
+			<option value = "4">4</option>
+			<option value = "5">5</option>
+			<option value = "6">6</option>
+			<option value = "7">7</option>
+			<option value = "8">8</option>
+			<option value = "9">9</option>
+			<option value = "10">10</option>
+			<option value = "11">11</option>
+			<option value = "12">12</option>
+		</select>
+	-->		
+
+	</div>
+	<script>
+		/* 방법.1 */
+		// <select>태그 생성, 속성값 추가, 추가
+		var select = document.createElement('select');
+		select.setAttribute('name', 'mm');  // 속성값
+		// select태그 안의 <option> 추가 : 반복문 적용
+		var m = 1;
+		while (m <= 12) {
+			var option = document.createElement('option'); // <option>태그 생성
+			option.setAttribute('value', m);               // <option>태그 안에 속성값 추가
+			option.textContent = m + '월';                  // <option>태그 안에 데이터 삽입
+			select.appendChild(option);                    // <select>태그 안에 <option>태그 삽입
+			m++;                                           // 반복문이 끝나기 전에 m의 값을 1만큼 늘려준다.
+		}
+		// <div>태그 안에 형성된 데이터 값의 <select>태그 삽입 
+		document.getElementById('select-box').appendChild(select);
+		
+	/*
+		방법.2
+		var result = '<select name = "mm">';
+		↓ (와 동일한 내용)
+		var select = document.createElement('select');
+		select.setAttribute('name', 'mm');  // 속성값
+		________________________________________________
+		var m = 1;
+		while (m <= 12) {
+			result += '<option value = " ' + m + ' " >' + m + '월';  =>  <option value = "m"> m월
+			m++;
+		}
+		document.getElementById('select-box').appendChild(result);
+	*/
+		
+	</script>
+
+	
+</body>
+</html>
