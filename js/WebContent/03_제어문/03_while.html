@@ -110,8 +110,77 @@
 		}
 		document.getElementById('select-box').appendChild(result);
 	*/
+	</script>
+	
+	
+	
+	<!-- 4. -->
+	<div id="table"></div>
+	<script>
+		// 1. table 태그 생성
+		var table = document.createElement('table');
+		table.setAttribute('id', 'table_box');
+		/* table_CSS */
+		table.style['border'] = '1px solid black';
+		table.style.borderCollapse = 'collapse';
+		table.style.borderSizing = 'border-box';
+		
+		
+		// 2. table 태그 내부의 <caption>태그  생성
+		var caption = document.createElement('caption');
+		caption.textContent = '다이얼';
+		caption.innerHTML = '<strong> 다이얼 </strong>'; 
+		/* caption_CSS */
+		caption.style.color = 'orange';
+		caption.style.fontSize = '20px';
+		caption.style.padding = '20px 0 10px 0';
+		
+		
+		// 3. 다이얼 배열 생성
+		var arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#'];
+		// 4. 반복문으로 table 작성
+		var i = 0;
+		while (i <= 11) {
+			if (i % 3 == 0) {
+				var tr = document.createElement('tr');
+				table.appendChild(tr);
+			}
+			var td = document.createElement('td');
+			/* td_CSS */
+			td.style.border = '1px solid black';
+			td.style.borderCollapse = 'collapse';
+			td.style.width = '50px';
+			td.style.height = '50px';
+			td.style.textAlign = 'center';
+			
+			/* 테이블 내용 삽입 */
+			td.textContent += arr[i];
+			tr.appendChild(td);
+			table.appendChild(tr);
+			i++;
+		}
+		document.getElementById('table').appendChild(table);
+		document.getElementById('table_box').appendChild(caption);
 		
 	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 </body>

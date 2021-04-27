@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript-continue</title>
+</head>
+<body>
+	<div id = "parcticel"></div>
+	<script>
+		// 1. 빈 문자열 변수 생성 
+		var message = '';
+		// 2. 반복문 사용
+		for (let n = 1; n < 100; n++) {
+			let digits = n % 10;         // 일의 자리
+			let tens = parseInt(n / 10); // 십의 자리
+			let is369 = (digits != 0 && digits % 3 == 0) || 
+						(tens != 0 && tens % 3 == 0);
+			if (is369) {
+				continue;  // for문의 n++로 이동한다.
+			}
+			/* message변수에 내용 삽입 */
+			message += n + '&nbsp';
+			if (n % 10 == 0) {
+				message += '<br>';
+			}
+		}
+		// 3. <div id = "parcticel">태그안에 내용 삽입 
+		/* → 'message'변수 안에는 태그가 포함되어있으므로 : "innerHTML" 사용 */
+		document.getElementById('parcticel').innerHTML = message;
+	</script>
+	
+	
+	
+	<!-- 2. Quiz -->
+	<div id = "parcticel2"></div>
+	<script>
+		// 5개의 양수를 입력받아서 그 평균을 출력하세요.
+		// 양수 이외의 데이터가 입력되면 '양수가 아닙니다. 다시 입력하세요.
+		// 메시지를 출력한 뒤 다시 입력받으시오. (양수만 5개를 입력 받는다.)
+		// Hint.. NaN(Not a Number)을 검사하는 isNaN() 함수를 사용해 보세요.
+		
+		// 1. 양수만 입력 받을 수 있도록 작성
+		/* 반복문 사용 */
+		var count = 0;
+		var total = 0;
+		var avg = ''; /* 평균을 구할 빈문자열 생성 */
+		while (count < 5) {
+			/* 입력받은 숫자를 담을 변수 : n */
+			let num = Number(prompt( (count + 1) + '번째 양수를 입력하세요.'));
+			if (isNaN(num) || num <= 0) {
+				alert(num + '은 양수가 아닙니다. 다시 입력하세요.')
+				continue;  // while (count < 5) 로 이동
+			}
+			total += num;
+			count++;
+		}
+		/* 평균 구하기 */
+		avg = total / 5;
+		/* <div id = "parcticel2">태그에 avg변수 삽입 */
+		document.getElementById('parcticel2').innerHTML = avg;
+		
+		
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
