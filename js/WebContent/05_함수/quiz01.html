@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		
+	</script>
+</head>
+<body>
+	<div id="practicel"></div>
+	<script>
+		var people = [  // 객체로 이루어진 '배열' 타입으로 만들어짐.
+			{
+				'name' : '브레드',
+				'age' : 10
+			},
+			{
+				'name' : '월크',
+				'age' : 5
+			},
+			{
+				'name' : '초코',
+				'age' : 4
+			}
+		];
+		
+		// 1. table 생성
+		var table = document.createElement('table');
+		document.getElementById('practicel').appendChild(table);
+		
+		// 2. table - 제목 <thead>, <th>
+		var thead = document.createElement('thead');
+		table.appendChild(thead);
+		var tr = document.createElement('tr');
+		thead.appendChild(tr);
+		
+		var titles = ['이름' , '나이'];
+		
+		for (let i = 0; i < titles.length; i++) {
+			var th = document.createElement('th');
+			th.textContent = titles[i];
+			tr.appendChild(th);			
+		}
+		
+		// 3. table - 본문 <tbody>, <td>
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+		for (let i = 0; i < people.length; i++) {
+			var tr = document.createElement('tr');
+			// people[i]는 객체이다. {'name':'브레드', 'age':10}
+			for(let p in people[i]) {  /* 객체의 프로퍼티 사용 */
+				// people[i][p] : people[i]['name'], people[i]['age']
+				var td = document.createElement('td');
+				td.textContent = people[i][p];
+				tr.appendChild(td);
+				tbody.appendChild(tr);
+			}
+		}
+		
+		
+		
+	</script>
+</body>
+</html>

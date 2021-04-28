@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>프로퍼티</title>
+	<script>
+		// 1. 프로퍼티가 없는 객체 생성
+		 var person = {};
+		
+		// 2. 프로퍼티 추가
+		// 1) 동적 추가가 지원된다. "자동"
+		// 2) 새로운 프로퍼티가 발견되면 알아서 추가된다.
+		person.name = '브레드';
+		person.age = 10;
+		person.birthday = '2021-03-03';
+		
+		// 3. 프로퍼티 수정
+		// 기존의 존재하는 프로퍼티를 불러서 수정한다. 
+		person.birthday = '2011-03-03';
+		
+		// 4. 프로퍼티 삭제
+		delete person.birthday;
+		person_info(person);
+		
+		function person_info(p) {
+			console.log('이름 : ' + p.name);
+			console.log('나이 : ' + p.age);
+			console.log('생일 : ' + p.birthday);
+		}
+		
+		// 5. 프로퍼티 순회 (반복문으로 프로퍼티 불러서 사용하기)
+		/* for-in문으로 사용해보기 */
+		// 1) for-in문
+		// 2) 형식
+		// 	  for (let 프로퍼티 in 객체) {  <= 프로퍼티의 자료형은 String
+		//	 		객체.프로퍼티         => 사용할 수 없음	   
+		//			객체['프로퍼티'] => *사용 가능*
+		//    }
+		for (let p in person) {
+			console.log(person[p]);
+		}
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
