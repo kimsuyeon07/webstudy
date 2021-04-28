@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>라면</li>
+		<li>우동</li>
+		<li>김밥</li>
+		<li>튀김</li>
+		<li>순대</li>
+	</ul>
+	<script>
+		// 입력받은 메뉴를 삭제하자.
+		
+		// 1. 삭제할 메뉴 : 입력
+		var menuName = prompt('삭제할 메뉴를 입력하세요.');
+		// 2. <li>태그 안에 있는 내용 불러오기 (알아서 배열로 불러들임.)
+		var liList = document.getElementsByTagName('li');  // 배열로 나온다.
+		console.log(liList);
+		// 3. liList 배열을 조회해서, 해당 메뉴를 찾으면 삭제 진행
+		for (let i = 0; i < liList.length; i++) {  // liList배열의 길이만큼 반복하겠다.
+			/* 입력받은 메뉴의 이름과 동일하면 삭제 진행 */
+			if (liList[i].textContent == menuName) {
+				/* 
+					요소 삭제
+					부모태그.removeChild(삭제요소);
+						부모태그 알아내는 방법
+						: <li>태그 경우 <ul>이 부모이기 때문에 순서만 지정해주면 된다.
+						: ** getElementsByTagName의 경우는 선택할 태그의 순서를 지정해주어야 한다. => [인덱스번호]
+						→  document.getElementsByTagName('ul')[0]
+				
+				*/
+				document.getElementsByTagName('ul')[0].removeChild(liList[i]);
+			}
+		}
+		
+		
+	</script>
+</body>
+</html>

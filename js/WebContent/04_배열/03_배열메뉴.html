@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="UTF-8">
+	<title>배열메뉴</title>
+	<style>
+		* {
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+			border-collapse: collapse;
+		}
+		ul {
+			border : 1px solid lightgray;
+			list-style-type:none;
+			margin: 0 auto;
+			text-align: center;
+		}
+		li {
+			/* border: 1px solid red; */
+			display : inline-block;
+			padding: 15px 0;
+			margin: 0 20px;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		li:hover {
+			border-bottom: 1px solid red;
+			cursor: pointer;
+			padding-bottom: 14px;
+		}
+		li:hover a {
+			color: red;
+			font-weight: 600;
+		}
+	</style>
+	<script>
+		
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a>사전</a></li>
+		<li><a>뉴스</a></li>
+		<li><a>증권</a></li>
+		<li><a>부동산</a></li>
+		<li><a>지도</a></li>
+	</ul>
+	
+	<br>
+	
+	<header>
+		<div class="gnb"></div>
+	</header>
+	<script>
+		var menu = ['메일', '카페', '블로그', '쇼핑', 'Pay'];
+		var ul = document.createElement('ul');
+		document.getElementsByClassName('gnb')[0].appendChild(ul);
+		for (let i = 0; i < menu.length; i++) {
+			var li = document.createElement('li');
+			var a = document.createElement('a');
+			a.textContent = menu[i];
+			a.setAttribute('href', 'javascript:void(0)');
+			li.appendChild(a);
+			ul.appendChild(li);
+		}
+		
+		
+	</script>
+	
+</body>
+</html>

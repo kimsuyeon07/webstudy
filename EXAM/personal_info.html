@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>personal_info</title>
+    
+    <style>
+        /* reset */
+        html, body { margin: 0; padding: 0;}
+        body {background-color: #edfaff;}
+        
+        /* css */
+        #container {
+            margin: 0 auto;
+            width: 500px;
+        }
+        /* table_스타일 */
+        table { width: 100%; }
+        table, td {
+            box-sizing: border-box;
+            border-collapse: collapse;
+            border: 1px solid darkgray;
+        }
+        th, td { height: 40px; }
+        /* thead */
+        thead tr {
+            background-color: darkblue;
+            color: white;
+        }
+        /* tbody */
+        tbody tr { background-color: white; }
+        tbody td { padding-left: 10px; }
+        
+        
+        /* input_스타일 */
+        .m_input { width: 100px; }
+        .s_input { width: 50px; }
+        input[type="text"] { 
+            height: 22px;
+            border: 1px solid darkgray;
+            outline: none;
+            padding-left: 5px;
+        }
+        input[id='self'] { /* 자기소개 */
+            margin:5px 0;
+            width: 90%;
+            height: 150px;
+        }
+        input[name='gender'] + label, input[name='hobbies'] + label, input[name='birth'] + span {
+            margin-left: -6px;
+        } 
+        
+        /* 하단 버튼 */
+        .f_btn {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .f_btn a {
+            text-decoration: none;
+            display: inline-block;
+            width: 100px;
+            height: 45px;
+            background-color: darkblue;
+            color: white;
+            line-height: 45px;
+            border-radius: 3px;
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <table>
+            <caption><h1>개인정보입력 폼</h1></caption>
+            <thead>
+                <tr>
+                    <th colspan="2">개인정보</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="personNum">주민등록번호</label></td>
+                    <td>
+                        <form method="post">
+                            <input type="text" id="personNum" name="person_num1" class="m_input" required>
+                            <span> - </span>
+                            <input type="text" id="personNum" name="person_num2" class="m_input" required>
+                            <button>검증</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="birth">생일</label></td>
+                    <td>
+                        <input type="text" id="birth" name="birth" class="s_input">
+                        <span> 년 </span>
+                        <input type="text" id="birth" name="birth" class="s_input">
+                        <span> 월 </span>
+                        <input type="text" id="birth" name="birth" class="s_input">
+                        <span> 일 </span>
+                    </td>
+                </tr>
+                <tr class="user_gender">
+                    <td>성별</td>
+                    <td>
+                        <input type="radio" id="man" name="gender" value="male">
+                        <label for="man">남자</label>
+                        <input type="radio" id="woman" name="gender" value="female">
+                        <label for="woman">여자</label>
+                    </td>
+                </tr>
+                <tr class="user_hobbies">
+                    <td>관심분야</td>
+                    <td>
+                        <input type="checkbox" id="travel" name="hobbies" value="여행">
+                        <label for="travel">여행</label>
+                        <input type="checkbox" id="movie" name="hobbies" value="영화">
+                        <label for="movie">영화</label>
+                        <input type="checkbox" id="book" name="hobbies" value="독서">
+                        <label for="book">독서</label>
+                        <input type="checkbox" id="music" name="hobbies" value="음악">
+                        <label for="music">음악</label>
+                        <input type="checkbox" id="nothing" name="hobbies" value="no_hobbies">
+                        <label for="nothing">관심없음</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="self">자기소개</label></td>
+                    <td>
+                        <input type="text" id="self" name="self-box" >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="f_btn"> 
+            <a href="board.html">수정완료</a>
+        </div>
+    </div>
+</body>
+</html>

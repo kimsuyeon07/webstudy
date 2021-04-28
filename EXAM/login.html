@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Login</title>
+    
+    <style>
+        /* reset */
+        html, body {margin: 0; padding:0;}
+        a { text-decoration: none; color: black;}
+        
+        /* CSS */
+        body {background-color: #edfaff;}
+        #container { 
+            margin: 0 auto;
+            width: 400px;
+            margin-bottom: 50px;
+        }
+        
+        /* 공통 css */
+        div { margin: 0 auto; }
+        
+        /* 1. logo */
+        .logo_img {
+            width: 150px;
+            height: 150px;
+            background: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA0MTZfOTgg%2FMDAxNTg3MDAxMTA2MjY4.Kl4LygUnsJJ43PEzeMLf78bgNCok9jAkmnRR4BzYr9Yg.j2kQjkcTZ9zoi4yGVfoARHlViuEgh8TrlcLFnVb3oNQg.PNG.taeho1674%2Fimage.png&type=a340);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-color: white;
+            margin: 50px auto; 
+        }
+        
+        /* 2. 로그인박스 :login_box */
+        .login_box {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .login_box input {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            box-sizing: border-box;
+            outline: none;
+            width: 100%;
+            height: 40px;
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+        
+        /* 3. 로그인 버튼 : login_btn */
+        .login_btn {
+            box-sizing: border-box;
+            border-radius: 3px;
+            width: 100%;
+            height: 45px;
+            background-color: darkblue;
+            text-align: center;
+            line-height: 45px;
+            margin-bottom: 10px;
+        }
+        .login_btn a {
+            display: block;
+            width: 100%;
+            height: 45px;
+            color: white;
+        }
+        
+        /* 4. 자동 로그인 / 비밀번호 저장 : login_check */
+        .login_check {
+            margin-bottom: 20px;
+        }
+        .login_check label {
+            margin-right: 10px;
+        }
+        
+        /* 5. 환경설정 : f_login */
+        .f_login {
+            text-align: center;
+            color: gray;
+        }
+        .f_login a {
+            color: gray;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+       
+        <!-- 1. logo -->
+        <div class="logo_img"></div>
+        
+        <!-- 2. 로그인박스 -->
+        <div class="login_box">
+            <form method="post">
+                <span class="int_box"> 
+                    <input type="text" name="id" placeholder="계정"> 
+                </span>
+                <span class="int_box"> 
+                    <input type="password" name="pw" placeholder="비밀번호"> 
+                </span>
+            </form>
+        </div>
+        
+        <!-- 3. 로그인 버튼 -->
+        <div class="login_btn">
+            <a href="board.html"> 로그인 </a>
+        </div>
+        
+        <!-- 4. 자동 로그인 / 비밀번호 저장 -->
+        <div class="login_check">
+           <!-- 자동 로그인 : auto_login -->
+            <input type="checkbox" id="auto_login" name="login_check" value="자동로그인" checked>
+            <label for="auto_login">자동 로그인</label>
+            <!-- 비밀번호 저장 : pw_save -->
+            <input type="checkbox" id="pw_save" name="login_check" value="비밀번호저장" checked>
+            <label for="pw_save">비밀번호 저장</label>
+        </div>
+        
+        <!-- 5. 환경설정 -->
+        <div class="f_login">
+            <a>
+                <i class="fas fa-cog"></i>
+                환경설정
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>
