@@ -11,10 +11,50 @@
 		console.log('최소값 : ' + Math.min(10, 20, 30, 40, 50));
 		console.log('루트 : ' + Math.sqrt(25));
 		console.log('반올림 : ' + Math.round(1.5)); // 정수로 반올림
-		console.log('올림 : ' + Math.ceil(1.5));   // 정수로 올림
+		console.log('올림 : ' + Math.ceil(1.4));   // 정수로 올림
 		console.log('내림 : ' + Math.floor(1.5));  // 정수로 내림
 		console.log('절사 : ' + Math.trunc(1.5));  // 정수로 절사
-		console.log('난수 : ' + Math.random());    // 0 <= 난수 < 1
+		console.log('난수 : ' + Math.random());    // (실수) 0 <= 난수 < 1
+		console.log('난수 : ' + parseInt(Math.random()*5));    // (정수) 0 <= 난수  < n
+	</script>
+	<script>
+		// 반올림, 올림, 내림, 절사를 자릿수 지정이 가능하도록 함수 구현하기.
+		
+		/* 반올림 */
+		// 1. 소수2자리 반올림 : Math.round(1.456 * 100) 100
+		// 2. 소수1자리 반올림 : Math.round(1.456 * 10)/ 10
+		// 3. 소수0자리 반올림 : Math.round(1.456 * 1)
+		function myRound(n, digit) {  /* digit : 자릿수 */
+			/* digit에 전달되는 값이 없으면 0으로 초기화한다. (디폴트) */
+			digit || (digit = 0);  
+			return Math.round(n * Math.pow(10,digit)) / Math.pow(10,digit);
+		}
+		console.log(myRound(45678.45678, 3));  // 45678.457
+		console.log(myRound(45678.45678, 2));  // 45678.46
+		console.log(myRound(45678.45678, 1));  // 45678.5
+		console.log(myRound(45678.45678, 0));  // 45678
+		console.log(myRound(45678.45678));     // 45678
+		console.log(myRound(45678.45678, -3)); // 45680 
+		console.log(myRound(45678.45678, -2)); // 45700
+		console.log(myRound(45678.45678, -1)); // 46000
+		
+		/* 올림 */
+		// Math.ceil()
+		function myCeil(n, digit) {
+			digit || (digit = 0);
+			return Math.ceil(n * Math.pow(10, digit)) / Math.pow(10, digit); 
+		}
+		console.log(myCeil(45678.45678, 3));
+		console.log(myCeil(45678.45678, 2));
+		console.log(myCeil(45678.45678, 1));
+		console.log(myCeil(45678.45678));
+		console.log(myCeil(45678.45678, -3));
+		console.log(myCeil(45678.45678, -2));
+		console.log(myCeil(45678.45678, -1));
+		
+		/* ... */
+		
+		
 	</script>
 </head>
 <body>

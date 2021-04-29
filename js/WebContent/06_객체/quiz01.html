@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*
+			생성자 함수 Student를 구현하시오
+			1. 매개변수 : name, kor, eng, mat
+			2. 프로퍼티 : name, kor, eng, mat, getAverage, getGrade
+		*/
+		
+		// 프로퍼티 생성
+		
+		/* 1. 생성자 함수 : Student */
+		function Student(name, kor, eng, mat) {
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.mat = mat;
+			/* [프로토타입] 평균 구하기 */
+			this.__proto__.getAverage = function(){
+				return (this.kor + this.eng + this.mat) / 3 ;
+			}
+			/* [프로토타입] 학점구하기 */
+			this.__proto__.getGrade = function(){
+				var grade;
+				if (this.getAverage() >= 90) {
+				grade = 'A';
+				} else if (this.getAverage() >= 80) {
+				grade = 'B';
+				} else if (this.getAverage() >= 70) {
+					grade = 'C';
+				} else if (this.getAverage() >= 60) {
+					grade = 'D';
+				} else {
+					grade = 'F';
+				}
+				return grade;
+			}	
+		}
+		
+		/* 2. 객체 생성 : 배열로 생성해보기 */
+		students = [
+			new Student('짱구', 90, 98, 95),
+			new Student('월크', 80, 87, 89),
+			new Student('초코', 70, 78, 74)
+		];
+		
+		/* 3. 호출 */
+		for (let i = 0; i<students.length; i++) {
+			// 방법1
+		/*
+			with (students[i]) { // 반복문 처음 시작은  " students[i] " 로 시작하겠다는 의미
+				 console.log('이름: ' + name);
+				 console.log('국어: ' + kor);
+				 console.log('영어: ' + eng);
+				 console.log('수학: ' + mat);
+				 console.log('평균: ' + getAverage());
+				 console.log('학점: ' + getGrade());
+			}
+		*/
+			// 방법2
+			for (var p in students[i]) {
+				if (p == 'getAverage' || p == 'getGrade') {
+					console.log(students[i][p]());  // students[i][p]'()' <= *필수*
+				} else {
+					console.log(students[i][p]);
+				}
+			}
+		}
+		
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
