@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz01</title>
+	<style>
+		#box {
+			width: 150px;
+			height: 150px;
+			text-align: center;
+			line-height: 150px;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var rainbow = ['빨','주','노','초','파','남','보'];
+		var colors = ['red','orange','yellow','green','blue','indigo','purple'];
+		var countNum = 0;
+		(function rainbow() {
+			setTimeout(function(){
+				/* rainbow배열의 인덱스 번호보다 커지면 0으로 초기화 */
+				if (countNum == 7) {
+					countNum = 0;
+				}
+				/* #box 안에 내용 삽입 */
+				document.getElementById('box').innerHTML = rainbow[countNum];
+				/* 순서따라 배경색변경 */
+				document.getElementById('box').style.backgroundColor = colors[countNum];
+			/*
+				switch(countNum) {
+				case 0: document.getElementById('box').style['background-color'] = 'red'; break;
+				case 1: document.getElementById('box').style['background-color'] = 'orange'; break;
+				case 2: document.getElementById('box').style['background-color'] = 'yellow'; break;
+				case 3: document.getElementById('box').style['background-color'] = 'green'; break;
+				case 4: document.getElementById('box').style['background-color'] = 'blue'; break;
+				case 5: document.getElementById('box').style['background-color'] = 'indigo'; break;
+				case 6: document.getElementById('box').style['background-color'] = 'purple'; break;
+				default: document.getElementById('box').style['background-color'] = 'red';
+				}
+			*/
+				/* 배열의 인덱스 번호 늘려주기 */
+				countNum++;
+				rainbow();  // 자기자신 호출
+			}, 1000);
+		})();
+	</script>
+</body>
+</html>
