@@ -258,7 +258,13 @@
     			nameCheck.textContent = '필수 정보입니다.';
     			nameCheck.setAttribute('class', 'check_fail check_subT');
     		} else {
-    			nameCheck.textContent = '';
+    			let regName = /^[가-힣a-zA-z]+$/;
+    			if (regName.test(userName.value)) {
+    				nameCheck.textContent = '';
+    			} else {
+    				nameCheck.textContent = '한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)';
+    				nameCheck.setAttribute('class', 'check_fail check_subT');
+    			}
     		}
     	});
     	
