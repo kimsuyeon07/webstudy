@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/* reset */
+html, boby, p {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Dotum,'돋움',Helvetica,sans-serif;
+    font-size: 12px;
+}
+a {text-decoration:none;}
+/* reset */
+
+
+
+body { background: #f5f6f7; }
+.container {
+    width: 768px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* LOGO */
+header {
+    /* 부모 : .container 기준 */
+    width: 100%;
+    padding-top: 60px;
+}
+
+
+/* 본문 영역 */
+section {}
+section article {
+    margin-top: 20px;
+}
+
+    /* 본문의 공통영역 css */
+article .join_row {
+    width: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+article .join_row > label {
+    display: block;
+    text-align: left;
+    padding: 20px 0 6px 0;
+    font-weight: 1000;
+    font-size: 14px;
+}
+    /* box 스타일 지정 */
+.box-text, button {
+    display: inline-block;
+    position: relative;
+    width: 460px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    background-color: white;
+    padding: 0 20px;
+    z-index: 1;
+    line-height: 50px;
+}
+input, select {
+    width: 100%;
+    height: 29px;
+    margin: 0 auto;
+    line-height: 29px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    z-index: 2;
+}
+button {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.box-text:focus, select:focus {
+    border: 1px solid #03c75a;
+}
+
+
+    /* 1. 아이디 박스(아이콘)_ position : absolute */
+.join_row .join_sup, .pw_icon {
+    position: absolute;
+    font-size: 15px;
+    right: 13px;
+    color: #888;
+}
+.pw_icon {
+    font-size: 18px;
+    right: 15px;
+    color: #aaaaaa;
+}
+
+    /* 2. 생년월일_ 3칸 박스 위치 and 이메일 박스(선택) */
+.join_row .brith  {
+    display: flex;
+    justify-content: space-between;
+}
+.join_row .brith .box-text {
+    width: 32%;
+} 
+label[for='user_email'] span {
+    font-size: 12px;
+    color: #afafaf;
+    font-weight: 400;
+}
+
+    /* 3. 휴대전화_ 2칸 박스 위치 */
+.join_row_3 .certify {
+    display: flex;
+    justify-content: space-between;
+}
+.join_row_3 .box-text {
+    margin-bottom: 10px;
+}
+.join_row_3 .certify .box-text { width: 68%; }
+.join_row_3 .certify button { width: 30%; }
+
+    /* 4. 가입하기_ 여백 */
+.join_row_4 {
+    margin-top: 20px; 
+}
+    /* Btn(공통영역) : 3.휴대전화_인증번호 4.가입하기 */
+.join_btn {
+    background-color: #03c75a;
+    color: white;
+    cursor: pointer;
+    width: 460px;
+}
+
+
+/* Footer */
+footer {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    margin: 50px 0 20px 0;
+    color: #777777;
+}
+.f_info span {
+    color: #bfbfbf;
+}
+.f_copy a {
+    color: #4d4d4d;
+}
+    /* 모든 footer안의 a 태그를 hover 하면_ */
+footer a:hover {
+    color: #03c75a;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.f_copy {
+    font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------- */
+	/* 아이디, 비밀번호 조건 검사 CSS */
+.check_subT {
+	text-align: left;
+	margin-top: 5px;
+}
+#pwd + span.check_pass::before {
+	content: '안전';
+	font-size: 14px;
+}
+#pwd + span.check_fail::before {
+	content: '사용불가';
+	font-size: 14px;
+}
+.check_fail {
+	color: red; 
+}
+.check_pass {
+	color: #03c75a; 
+}
+
+
+
+

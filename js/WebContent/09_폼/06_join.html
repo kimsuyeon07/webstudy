@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/join.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Quiz16</title>
+    
+    
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="http://www.naver.com">
+                <img src="../images/naver.png" alt="NAVER" width="200px">    
+            </a>
+        </header>
+        
+        <section>
+            <!-- 본문양식 -->
+            
+                <article class="join_row_1">
+                   <form method="post" id="f">
+                        <!-- 아이디 label, input -->
+                        <div class="join_row">
+                            <!-- 아이디 label -->
+                            <label for="id">아이디</label>
+                            <!-- 아이디 input 상자 -->
+                            <span class="box-text">
+                                <input type="text" placeholder="ID" id="id">
+                                <span class="join_sup">@naver.com</span>
+                            </span>
+                            <!-- 아이디 체크 결과 -->
+                            <p id="id_check"></p>
+                            
+                        </div>
+
+                        <!-- 비밀번호 label, input -->
+                        <div class="join_row">
+                            <!-- 비밀번호 label -->
+                            <label for="pwd">비밀번호</label>
+                            <!-- 비밀번호 input 상자 -->
+                            <span class="box-text">
+                                <input type="password" placeholder="Password" id="pwd">
+                                <span class="pw_icon">
+                                    <i class="fas fa-unlock-alt"></i>
+                                </span>
+                            </span>
+                            <!-- 비밀번호 체크 결과 -->
+                            <p id="pw_check"></p>
+                        </div>
+
+                        <!-- 비밀번호 확인 label, input -->
+                        <div class="join_row">
+                            <!-- 비밀번호 확인 label -->
+                            <label for="re_pwd">비밀번호 재확인</label>
+                            <!-- 비밀번호 확인 input 상자 -->
+                            <span class="box-text">
+                                <input type="password" placeholder="Password" id="re_pwd">
+                                <span class="pw_icon"><i class="fas fa-lock"></i></span>
+                            </span>
+                            <!-- 비밀번호 동일 체크 결과 -->
+                            <p id="re_pwd_check"></p>
+                        </div>
+                    </form>
+                </article>
+                
+                <article class="join_row_2">
+                    <!-- 이름 label, input -->
+                    <div class="join_row">
+                        <!-- 이름 label -->
+                        <label for="user_name">이름</label>
+                        <!-- 이름 input 상자 -->
+                        <span class="box-text">
+                            <input type="text" name="Name" id="user_name">
+                        </span>
+                        <!-- 이름 조건 체크 결과 -->
+                        <p id="name_check"></p>
+                    </div>    
+                    
+                    <!-- 생년월일 label, input -->
+                    <div class="join_row">
+                        <!-- 생년월일 label -->
+                        <label for="user_birth">생년월일</label>
+                        <!-- 생년월일 input 상자 -->
+                        
+                        <div class="brith">
+                            <span class="box-text">
+                                <input type="text" name="BirthDate" value="년(자)" id="user_birth">
+                            </span>
+                            <span class="box-text">
+                               <select name="BirthDate" id="user_birth">
+                                <option value="0">월</option>
+                                <option value="1">1월</option>
+                                <option value="2">2월</option>
+                                <option value="3">3월</option>
+                                <option value="4">4월</option>
+                                <option value="5">5월</option>
+                                <option value="6">6월</option>
+                                <option value="7">7월</option>
+                                <option value="8">8월</option>
+                                <option value="9">9월</option>
+                                <option value="10">10월</option>
+                                <option value="11">11월</option>
+                                <option value="12">12월</option>
+                            </select>
+                            </span>
+                            <span class="box-text">
+                                <input type="text" name="BirthDate" value="일" id="use`r_birth">
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- 성별 label, select -->
+                    <div class="join_row">
+                        <!-- 성별 label -->
+                        <label for="user_gender">성별</label>
+                        <!-- 성별 select 상자 -->
+                        <span class="box-text">
+                           <select name="gender" id="user_gender">
+                            <option value="zero">성별</option>
+                            <option value="man">남자</option>
+                            <option value="woman">여자</option>
+                            <option value="nogender">선택안함</option>
+                        </select>
+                        </span>
+                    </div>
+                    
+                    <!-- 이메일 label, input -->
+                    <div class="join_row">
+                        <!-- 이메일 label -->
+                        <label for="user_email">본인 확인 이메일 <span>(선택)</span> </label>
+                        <!-- 이메일 input 상자 -->
+                        <span class="box-text">
+                            <input type="text" name="email" value="선택입력" id="user_email">
+                        </span>
+                    </div>
+                </article>
+                
+                <article class="join_row_3">
+                    <!-- 휴대전화 label, select -->
+                    <div class="join_row">
+                        <!-- 휴대전화 label -->
+                        <label for="user_phone">휴대전화</label>
+                        <!-- 휴대전화 select 상자 -->
+                        <span class="box-text">
+                            <select name="gender" id="user_certify">
+                                <option value="+82">대한민국 +82</option>
+                                <option value="+44">영국 +44</option>
+                                <option value="+1">미국/캐나다 +1</option>
+                                <option value="other">...</option>
+                            </select>
+                        </span>
+                        <!-- 전화번호 입력 input 상자 -->
+                        <div class="certify">
+                            <span class="box-text">
+                                <input type="text" name="phone" value="전화번호 입력" id="user_certify">
+                            </span>    
+                            <button id="user_certify" class="join_btn">인증번호 받기</button>
+                        </div>
+                        <span class="box-text">
+                            <input type="text" name="phone" value="인증번호 입력하세요" id="user_certify">
+                        </span>
+                    </div> 
+                </article>
+                
+                <article class="join_row_4" >
+                    <button class="join_btn"> 가입하기 </button>
+                </article>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="f_info">
+                <a>이용약관</a>
+                <span> | </span>
+                <a><strong>개인정보처리방침</strong></a>
+                <span> | </span>
+                <a>책임의 한계와 볍적고지</a>
+                <span> | </span>
+                <a>회원정보 고객센터</a>
+            </div>
+            <div class="f_copy">
+                &copy; 
+                <a href="https://www.navercorp.com/" target="_blank">NAVER Corp.</a>
+            </div>
+        </footer>
+    </div>
+    
+    
+    <script>
+    	/* id : 조건 검사 */
+    	var id = document.getElementById('id');
+    	id.addEventListener('blur', function(){
+    		var idCheck = document.getElementById('id_check');
+    		if(id.value == '') {
+    			idCheck.textContent = '필수 정보입니다.';
+    			idCheck.setAttribute('class', 'check_fail check_subT');
+    		} else {
+	    		var regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
+	    		if (regID.test(id.value)) {
+	    			idCheck.textContent = '멋진 아이디네요!';
+	    			idCheck.setAttribute('class', 'check_pass check_subT');
+	    		} else {
+	    			idCheck.textContent = '5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.';
+	    			idCheck.setAttribute('class', 'check_fail check_subT');
+	    		}
+    		}
+    	});
+    	
+    	/* pwd : 조건 검사 */
+    	var pwd = document.getElementById('pwd');
+    	pwd.addEventListener('blur', function(){
+    		var pwdCheck = document.getElementById('pw_check');  // <span>태그
+    		if (pwd.value == '') {
+    			pwdCheck.textContent = '필수 정보입니다.';
+    			pwdCheck.setAttribute('class', 'check_fail check_subT');
+    		} else {
+    			var regPWD = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[`~!@#$%^&*])[A-Za-z0-9`~!@#$%^&*]{4,16}$/;
+    			var icon = document.querySelector('#pwd + .pw_icon');
+    			if (regPWD.test(pwd.value)) {
+    				icon.setAttribute('class', 'pw_icon check_pass');
+    				pwdCheck.textContent = '';
+    			} else {
+    				icon.setAttribute('class', 'pw_icon check_fail');
+    				pwdCheck.textContent = '8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.';
+    				pwdCheck.setAttribute('class', 'check_fail check_subT');
+    			}
+    		}
+    	});
+    	
+    	/* pwd : 동일한지 검사 */
+    	var rePwd = document.getElementById('re_pwd');
+    	var reIcon = document.querySelector('#re_pwd + span');
+    	rePwd.addEventListener('blur', function(){
+    		var rePwdCheck = document.getElementById('re_pwd_check');
+    		if (rePwd.value == '') {
+    			reIcon.setAttribute('class', 'pw_icon check_fail');
+    			rePwdCheck.textContent = '필수 정보입니다.';
+    			rePwdCheck.setAttribute('class', 'check_fail check_subT');
+    		} else if (rePwd.value == pwd.value){
+    			reIcon.setAttribute('class', 'pw_icon check_pass');
+    			rePwdCheck.textContent = '';
+    		} else {
+    			reIcon.setAttribute('class', 'pw_icon check_fail');
+    			rePwdCheck.textContent = '비밀번호가 일치하지 않습니다.';
+    			rePwdCheck.setAttribute('class', 'check_fail check_subT');
+    		}
+    	});
+    	
+    	
+    	/* name : 입력확인 */
+    	var userName = document.getElementById('user_name');
+    	userName.addEventListener('blur', function(){
+    		var nameCheck = document.getElementById('name_check');
+    		if (userName.value == '') {
+    			nameCheck.textContent = '필수 정보입니다.';
+    			nameCheck.setAttribute('class', 'check_fail check_subT');
+    		} else {
+    			nameCheck.textContent = '';
+    		}
+    	});
+    	
+    	
+    	
+    </script>
+    
+    
+    
+</body>
+</html>
