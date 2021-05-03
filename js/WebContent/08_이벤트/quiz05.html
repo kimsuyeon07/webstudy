@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Q. 정답확인하기</title>
+	
+	<script>
+		onload = function() {
+			var check_no = document.getElementById('check-no');
+			var btn = document.getElementById('anwer-btn');
+
+			/* 정답을 안보여주는 상태 */
+			function hide() {
+				btn.setAttribute('value', '정답 보기');
+				check_no.style.visibility = 'hidden';
+			}
+			hide();
+			/* 정답을 보여준다. */
+			function show() {
+				btn.setAttribute('value', '정답 숨기기');
+				check_no.style.visibility = 'visible';
+			}
+			
+			/* 이벤트 리스너  */
+			function f() {  // anwer_btn.getAttribute('value')  == anwer_btn.value
+				if(btn.getAttribute('value') == '정답 보기') {
+					show();
+				} else {
+					hide();
+				}
+			}
+			
+			/* 표준 이벤트 */
+			btn.addEventListener('click', f);
+		}
+				
+					
+				
+				
+				
+				
+	</script>
+	
+	
+</head>
+<body>
+	<div id="container">
+		<h3>다음 중 존재하지 않는 태그는?</h3>
+		<ol>
+			<li>div</li>
+			<li>p</li>
+			<li>mother</li>
+			<li>ul</li>
+		</ol>
+		<div id="anwer">
+			정답 보기 : [ <span id="check-no"> 3 </span> ] &ensp; 
+			<input type="button" value="정답보기" id="anwer-btn">
+		</div>
+		
+	</div>
+</body>
+</html>

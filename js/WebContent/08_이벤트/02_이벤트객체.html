@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트 객체</title>
+	<script>
+		onload = function(){  // <= ** HTML문서를 모두 읽은 후에 실행_
+			
+			// 1.고전 이벤트 모델
+			var box = document.getElementById('box');
+		
+		/*   
+			box.onclick = function(){
+		
+				이벤트객체를 이벤트리스너에서 호출하는 방법
+				1. 이벤트 리스너에는 이벤트객체를 this라고 한다.
+				
+				this.textContent = '불렀어요?';  // this == box 
+			}
+		 */
+		 
+			box.onclick = function(event) {
+				// 이벤트객체를 이벤트리스너에서 호출하는 방법
+				// 2. 이벤트가 발생하면 발생된 이벤트가 객체 형태로 생성된다.
+				// 발생된 이벤트를 이벤트리스너에 매개변수로 선언해서 사용할 수 있다.
+				console.log(event);  // event 객체에는 target 프로퍼티가 있다.
+				event.target.textContent = '아 왜??';
+			}
+		 
+		 	/* ========================================================== */
+		 
+		 	// 2. 표준 이벤트 모델
+		 	var box2 = document.getElementById('box2');
+		 	
+		 	// 1) this
+			 box2.addEventListener('click', function(){
+				 this.textContent = '부르셨습니까?';
+			 });
+			 
+			 // 2) event
+			 box2.addEventListener('click', function(event){
+				 event.target.style.backgroundColor = 'yellow';
+			 });
+		 
+		}	
+	
+		 /* ========================================================== */
+	 
+		 // 3. 인라인 이벤트 모델
+		 var box3 = document.getElementById('box3');
+		 function f(box3) {
+			 box3.textContent = '클릭했습니다.';
+		 }
+	 
+	 
+	 
+	</script>
+</head>
+<body>
+	<div id = "box">클릭하기 전 BOX</div>
+	<div id = "box2">클릭하기 전 BOX2</div>
+	<div id = "box3" onclick="f(this)">클릭하기 전 BOX3</div>
+</body>
+</html>

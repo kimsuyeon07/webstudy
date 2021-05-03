@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Q. li 클릭 시, 선택 표시 </title>
+	<style>
+		ul { list-style-type: none; width: 600px; }
+		li {
+			margin: 2px;
+			padding: 3px 3px 3px 40px;
+			background: lightgray;
+		}
+		
+		.choice {
+			background-color: teal
+		}
+		.choice::before {
+			content: '';
+			display: inline-block;
+			width: 0.5em;
+			height: 1em;
+			border-width: 0 3px 3px 0;
+			border-color: limegreen;
+			border-style: solid;
+			transform: rotate(45deg);
+			position: absolute;
+			left: 64px;
+			margin-top: -2px;
+		}
+		
+	</style>
+	
+	<script>
+		onload = function() {
+			/* 선택을 했다, 안했다 (구분 : 속성으로 한다) */
+			var ul = document.getElementById('list');
+			//var ul = document.querySelector('ul');     // 첫번째 ul
+			//var ul = document.querySelectorAll('ul');  // 모든 ul
+			ul.addEventListener('click', function(){
+				// console.log(event);
+				if (event.target.tagName == 'LI') {  // 클릭한 태그가 <li>라면, 
+					event.target.classList.toggle('choice'); // <li class = "choice"> <-> <li class>바꿔준다.
+				}
+			});
+		}
+	</script>
+	
+</head>
+<body>
+	<h3>주말에 해야 할 일</h3>
+	<ul id="list">
+		<li>마트에서 장보기</li>
+		<li>어린이날 선물 사기</li>
+		<li>수업하기</li>
+		<li>타투 예약</li>
+		<li>잘꺼에요</li>
+	</ul>
+</body>
+</html>

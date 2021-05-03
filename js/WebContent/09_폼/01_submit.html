@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form:submit</title>
+</head>
+<body>
+	
+	<!-- 
+		submit
+		폼 내부의 모든 입력 요소들을 폼의 action 속성에 지정해 둔 곳으로 보내는 것
+		
+		value값을 만들어줘야 하는 것 (입력할 수 없는 form>
+			→ → radio, checkbox, select
+	-->
+
+
+	<form id="form" name="f" action="index.html">  
+		<!-- form요소에는 이름(name)을 줄 수 있다. -->
+		<!-- value : (입력요소의 입력값) : 입력한 값이 value의 속성값이 된다. -->
+		<input type="text" id="query" name="q" value="기본값">
+		<br><br>
+		<!-- button 태그 역할 : submit -->
+		<button>검색</button>
+	</form>
+	
+	<script>
+	
+		// body안에 <script>태그를 사용하면, [ onload ]를 사용하지 않아도 된다. (문서 상, script가 가장 마지막에 실행되기 때문에.)
+		
+		
+		/* form을 지정하는 방법 ( 적용할 form 요소를 찾는 방법 ) */
+		// ↓
+		// 1. <form id="form">   |  <input id="query"> 
+		// 	  document.getElementById('form');
+		var form = document.getElementById('form');
+		var query = document.getElementById('query');
+		
+		
+		/* < 입력된 데이터 값을 보낼까 말까 지정하는 역할 (↓) > */ 
+		// 1-1) 고전 이벤트 :
+		form.onsubmit = function(){      }
+		// 1-2) 표준 이벤트
+		form.addEventListener('submit', function(event){  
+		/* <form>의 <button>태그를 클릭했을 때, submit이 일어난다. :::  form태그에 걸어줄 수 있다. */
+			/* value의 속성값을 알아내는 방법 */
+			// (1) query.getAttribute('value');
+			// (2) query.value;
+			// alert(query.value);
+			
+			console.log(event);
+			/* 검색값을 통해 */
+			if (query.value == '') {
+				alert('검색어를 입력하세요.');
+				query.focus();  // focus : 'query'로 커서를 옯겨준다.
+				event.preventDefault();  // submit의 기본동작을 막겠다. : submit을 하지 않겠다는 의미
+				return false;
+			}
+			
+		});
+		
+		
+		// ↓
+		// 2. <form name="f">
+		//    1) document.forms.f
+		//    2) document.forms['f']
+		var form2 = document.forms.f;
+		var q = form2.q;  // var q = form2['q'];
+		
+		
+		
+		
+		
+	</script>
+	
+</body>
+</html>

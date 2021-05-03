@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>onload</title>
+	<script>
+		// onload : HTML문서(body)를 모두 읽은 뒤에 함수를 실행해라
+		// → <head>태그 안에 <script>태그가 만들어지면 * 무조건 "onload"를 작성한다 *
+		
+		window.onload = function() {
+			document.getElementById('box').textContent = '나는 박스다.';
+		}
+			
+	/*  [ 표준 이벤트 모델 : 이 경우는 상단의 고전 이벤트 모델을 더 잘 사용함. ]
+		window.addEventListener('load', function(){
+		});
+	*/
+		
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

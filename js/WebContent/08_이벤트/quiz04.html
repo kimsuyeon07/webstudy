@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<title>Q.이미지 슬라이드</title>
+	
+	<style>
+		* { box-sizing: border-box; }
+		#container {
+			margin: 0 auto;
+			width: 640px;
+			border: 1px solid black;
+		}
+		#image-box {
+			padding: 10px;
+			width: 100%;
+		}
+		#image {
+			width: 100%;
+			height:420px;
+		}
+		#nav-box {
+			margin: 0 auto;
+			width: 120px;
+			display: flex;
+			justify-content: space-between;	
+		}
+		#prev, #next {
+			width: 40px;
+			height:40px;
+			text-align: center;
+			line-height: 40px;
+			font-size:20px;
+			
+		}
+		#image-no {
+			width: 40px;
+			height:40px;
+			line-height: 40px;
+		}
+		
+		
+	</style>
+	
+	<script>
+		onload = function(){
+			var images = [ 'apple.jpg', 'cat.jpg', 'dog.jpg', 'eagle.jpg', 'frog.jpg'];
+			var image_idx = 0;
+			
+			
+			/* 현재  */
+			var image_no = document.getElementById('image-no');
+			function changeImageNo(){
+				image_no.textContent = (image_idx + 1) + ' / ' + images.length;
+			}
+			changeImageNo();
+				
+			
+			var image = document.getElementById('image');
+			var prev = document.getElementById('prev');
+			var next = document.getElementById('next');
+			
+			prev.addEventListener('click', function(){
+				changeImage(-1);
+			});			
+			next.addEventListener('click', function(){
+				changeImage(1);
+			});
+			function changeImage(n) {
+				// 인덱스 번호 출력
+				image_idx += n;
+				if ( image_idx == images.length ) { 
+					image_idx == 0; 
+				}
+				if ( image_idx < 0 ) {
+					image_idx == images.length-1;
+				}
+				// 이미지 표시
+				image.setAttribute('src', '../images/' + images[image_idx]);
+				// #image-no TEXT 수정
+				changeImageNo();
+			}
+			
+				
+			
+			/*  <↑↑↑ 아래 부분을 함수로 만들어 줘야 한다.>
+			
+			// #prev 클릭하면 (현재인덱스번호 -1), (image_no -1)
+			prev.addEventListener('click', function(){
+				// 인덱스번호 줄이기
+				image_idx--;
+				if(image_idx < 0) {
+					image_idx = (images.length-1);
+				}
+				image.setAttribute('src', '../images/' + images[image_idx]);
+				image_no.textContent = (image_idx+1) + ' / ' + images.length;
+			});
+			
+			 // #next 클릭하면 (현재인덱스번호 +1), (image_no +1)
+			next.addEventListener('click', function(){
+				// 인덱스번호 늘리기
+				image_idx++;
+				if (image_idx >= images.length) {
+					image_idx = 0;
+				}
+				image.setAttribute('src', '../images/' + images[image_idx]);
+				image_no.textContent = (image_idx+1) + ' / ' + images.length;
+			});
+			 
+		 	*/
+		}
+	</script>
+	
+</head>
+<body>
+	<div id="container">
+		<!-- 이미지 -->
+		<div id="image-box">
+			<img src="../images/apple.jpg" id="image">
+		</div>
+		<!-- 번호 -->
+		<div id="nav-box">
+			<div id="prev"><i class="fas fa-angle-left"></i></div>
+			<div id="image-no"></div>
+			<div id="next"><i class="fas fa-angle-right"></i></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form:submit_2</title>
+</head>
+<body>
+	<form name="f" action="index.html">
+		<input type="text" name="q">
+		<br><br>
+		<button>검색</button>
+	</form>
+	<script>
+		// 'name'으로 알아내는 방식
+		var f = document.forms.f;
+		var q = f.q;
+		f.addEventListener('submit', function(event){
+			alert(q.value);
+			if(q.value == '') {
+				alert('검색어를 입력하세요.');
+				q.focus();
+				event.preventDefault();
+				return false;
+			}
+			
+		});
+	</script>
+</body>
+</html>
