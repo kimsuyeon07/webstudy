@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz01</title>
+	<style>
+		#site_box {
+			display: inline-block;
+			text-align: center;
+			border: 1px solid lightgray;
+			box-sizing: border-box;
+			outline:none;
+			width: 160px;
+			height: 25px;
+		}
+		select {
+			border: none;
+			outline:none;
+			width: 150px;
+		}
+		input[type="button"] {
+			border: 1px solid lightgray;
+			box-sizing: border-box;
+			outline: none;
+			width: 40px;
+			height: 25px;
+		}
+	</style>
+	
+	<script>
+		onload = function() {
+			
+			// 사이트 선택
+			function goToSite() {
+				var site = document.forms.f.site;
+				if (site.value == '') {
+					alert('이동할 사이트를 선택하세요.');
+					return;
+				}
+				/* 새창으로 사이트 이동  */
+				// window.open(site.value, '', '');
+				// -
+				/* 기존 창으로 사이트 이동  */
+				location.href = site.value;
+			}
+			document.getElementById('site_btn').addEventListener('click', function() {
+				goToSite();
+			});
+			
+		}
+	</script>
+</head>
+<body>
+	<form name="f">
+		<div id="site_box">
+			<select name="site">
+				<option id="none">이동할 사이트 선택</option>
+				<option value="https://www.google.co.kr" id="goolge">구글</option>
+				<option value="https://www.naver.com" id="naver">네이버</option>
+				<option value="https://www.kakao.com" id="kakao">카카오</option>
+			</select>
+		</div>
+		<input type="button" id="site_btn" value="이동">
+	</form>
+</body>
+</html>
