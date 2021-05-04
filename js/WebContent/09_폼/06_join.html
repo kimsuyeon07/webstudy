@@ -19,16 +19,17 @@
         
         <section>
             <!-- 본문양식 -->
+            <!-- 회원가입 폼 -->
+            <form method="post" id="f" name="join_form">
             
                 <article class="join_row_1">
-                   <form method="post" id="f">
                         <!-- 아이디 label, input -->
                         <div class="join_row">
                             <!-- 아이디 label -->
                             <label for="id">아이디</label>
                             <!-- 아이디 input 상자 -->
                             <span class="box-text">
-                                <input type="text" placeholder="ID" id="id">
+                                <input type="text" placeholder="ID" id="id" class="int">
                                 <span class="join_sup">@naver.com</span>
                             </span>
                             <!-- 아이디 체크 결과 -->
@@ -42,7 +43,7 @@
                             <label for="pwd">비밀번호</label>
                             <!-- 비밀번호 input 상자 -->
                             <span class="box-text">
-                                <input type="password" placeholder="Password" id="pwd">
+                                <input type="password" placeholder="Password" id="pwd" class="int">
                                 <span class="pw_icon">
                                     <i class="fas fa-unlock-alt"></i>
                                 </span>
@@ -57,13 +58,12 @@
                             <label for="re_pwd">비밀번호 재확인</label>
                             <!-- 비밀번호 확인 input 상자 -->
                             <span class="box-text">
-                                <input type="password" placeholder="Password" id="re_pwd">
+                                <input type="password" placeholder="Password" id="re_pwd" class="int">
                                 <span class="pw_icon"><i class="fas fa-lock"></i></span>
                             </span>
                             <!-- 비밀번호 동일 체크 결과 -->
                             <p id="re_pwd_check"></p>
                         </div>
-                    </form>
                 </article>
                 
                 <article class="join_row_2">
@@ -76,21 +76,21 @@
                             <input type="text" name="Name" id="user_name">
                         </span>
                         <!-- 이름 조건 체크 결과 -->
-                        <p id="name_check"></p>
+                        <p id="name_check" class="check_fail check_subT"></p>
                     </div>    
                     
                     <!-- 생년월일 label, input -->
                     <div class="join_row">
                         <!-- 생년월일 label -->
-                        <label for="user_birth">생년월일</label>
+                        <label for="yyyy">생년월일</label>
                         <!-- 생년월일 input 상자 -->
                         
-                        <div class="brith">
+                        <div class="birth">
                             <span class="box-text">
-                                <input type="text" name="BirthDate" value="년(자)" id="user_birth">
+                                <input type="text" name="BirthDate" maxlength="4" placeholder="년(자)" id="yyyy">
                             </span>
                             <span class="box-text">
-                               <select name="BirthDate" id="user_birth">
+                               <select name="BirthDate" id="mm">
                                 <option value="0">월</option>
                                 <option value="1">1월</option>
                                 <option value="2">2월</option>
@@ -107,9 +107,11 @@
                             </select>
                             </span>
                             <span class="box-text">
-                                <input type="text" name="BirthDate" value="일" id="use`r_birth">
+                                <input type="text" name="BirthDate" maxlength="2" placeholder="일" id="dd">
                             </span>
                         </div>
+                            <!-- 생년월일 체크결과 -->
+                            <p id="birth_check"></p>
                     </div>
                     
                     <!-- 성별 label, select -->
@@ -119,12 +121,14 @@
                         <!-- 성별 select 상자 -->
                         <span class="box-text">
                            <select name="gender" id="user_gender">
-                            <option value="zero">성별</option>
-                            <option value="man">남자</option>
-                            <option value="woman">여자</option>
-                            <option value="nogender">선택안함</option>
+                            <option name="gender" value="">성별</option>
+                            <option name="gender" value="man">남자</option>
+                            <option name="gender" value="woman">여자</option>
+                            <option name="gender" value="nogender">선택안함</option>
                         </select>
                         </span>
+                        <!-- 성별 체크 결과 -->
+                        <p id="gender_check"></p>
                     </div>
                     
                     <!-- 이메일 label, input -->
@@ -133,8 +137,10 @@
                         <label for="user_email">본인 확인 이메일 <span>(선택)</span> </label>
                         <!-- 이메일 input 상자 -->
                         <span class="box-text">
-                            <input type="text" name="email" value="선택입력" id="user_email">
+                            <input type="text" name="email" placeholder="선택입력" id="user_email">
                         </span>
+                        <!-- 이메일 체크 결과 -->
+                        <p id="email_check"></p>
                     </div>
                 </article>
                 
@@ -142,10 +148,10 @@
                     <!-- 휴대전화 label, select -->
                     <div class="join_row">
                         <!-- 휴대전화 label -->
-                        <label for="user_phone">휴대전화</label>
+                        <label for="user_phone1">휴대전화</label>
                         <!-- 휴대전화 select 상자 -->
                         <span class="box-text">
-                            <select name="gender" id="user_certify">
+                            <select name="phone" id="user_phone1">
                                 <option value="+82">대한민국 +82</option>
                                 <option value="+44">영국 +44</option>
                                 <option value="+1">미국/캐나다 +1</option>
@@ -155,19 +161,23 @@
                         <!-- 전화번호 입력 input 상자 -->
                         <div class="certify">
                             <span class="box-text">
-                                <input type="text" name="phone" value="전화번호 입력" id="user_certify">
+                                <input type="text" name="phone" placeholder="전화번호 입력" id="mobile2">
                             </span>    
-                            <button id="user_certify" class="join_btn">인증번호 받기</button>
+                            <button id="mobile3" class="join_btn">인증번호 받기</button>
                         </div>
                         <span class="box-text">
-                            <input type="text" name="phone" value="인증번호 입력하세요" id="user_certify">
+                            <input type="text" name="phone" placeholder="인증번호 입력하세요" id="mobile4">
                         </span>
+                        <!-- 휴대전화 체크결과 -->
+                        <p id="phone_check" style="margin-top: -5px;"></p>
                     </div> 
                 </article>
                 
                 <article class="join_row_4" >
-                    <button class="join_btn"> 가입하기 </button>
+	                <!-- submit을 수행하는 button태그 -->
+                    <button id = "join_btn" class="join_btn"> 가입하기 </button>
                 </article>
+        	</form>
         </section>
         
         <!-- Footer -->
@@ -190,51 +200,77 @@
     
     
     <script>
+    
     	/* id : 조건 검사 */
-    	var id = document.getElementById('id');
+    	let id = document.getElementById('id');
+    	let idCheck = document.getElementById('id_check');
+	    let regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
+    	
     	id.addEventListener('blur', function(){
-    		var idCheck = document.getElementById('id_check');
+    		fn_idCheck();
+    	});
+    	
+    	function fn_idCheck() {
+    		// ↓ <footer>의 가입버튼 누를 시에 마지막 확인 하기 위해 : 모두 true를 반환하면 sumit시키기 위한 작업
+    		let ret = false;  
     		if(id.value == '') {
     			idCheck.textContent = '필수 정보입니다.';
     			idCheck.setAttribute('class', 'check_fail check_subT');
     		} else {
-	    		var regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
 	    		if (regID.test(id.value)) {
 	    			idCheck.textContent = '멋진 아이디네요!';
 	    			idCheck.setAttribute('class', 'check_pass check_subT');
+	    			ret = true;
 	    		} else {
 	    			idCheck.textContent = '5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.';
 	    			idCheck.setAttribute('class', 'check_fail check_subT');
 	    		}
     		}
-    	});
+    		return ret;
+    	}
+    	
     	
     	/* pwd : 조건 검사 */
-    	var pwd = document.getElementById('pwd');
+    	let pwd = document.getElementById('pwd');
+    	let pwdCheck = document.getElementById('pw_check');
+    	let regPWD = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[`~!@#$%^&*])[A-Za-z0-9`~!@#$%^&*]{4,16}$/;
+    	
     	pwd.addEventListener('blur', function(){
-    		var pwdCheck = document.getElementById('pw_check');  // <span>태그
+    		fn_pwdCheck();
+    	});
+    	
+    	function fn_pwdCheck() {
+    		let ret = false;
     		if (pwd.value == '') {
     			pwdCheck.textContent = '필수 정보입니다.';
     			pwdCheck.setAttribute('class', 'check_fail check_subT');
     		} else {
-    			var regPWD = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[`~!@#$%^&*])[A-Za-z0-9`~!@#$%^&*]{4,16}$/;
     			var icon = document.querySelector('#pwd + .pw_icon');
     			if (regPWD.test(pwd.value)) {
     				icon.setAttribute('class', 'pw_icon check_pass');
     				pwdCheck.textContent = '';
+    				ret = true;
     			} else {
     				icon.setAttribute('class', 'pw_icon check_fail');
     				pwdCheck.textContent = '8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.';
     				pwdCheck.setAttribute('class', 'check_fail check_subT');
     			}
     		}
-    	});
+    		return ret;
+    	}
+    	
     	
     	/* pwd : 동일한지 검사 */
-    	var rePwd = document.getElementById('re_pwd');
-    	var reIcon = document.querySelector('#re_pwd + span');
+    	let rePwd = document.getElementById('re_pwd');
+    	let reIcon = document.querySelector('#re_pwd + span');
+    	let rePwdCheck = document.getElementById('re_pwd_check');
+    	
     	rePwd.addEventListener('blur', function(){
-    		var rePwdCheck = document.getElementById('re_pwd_check');
+    		fn_rePwdCheck();
+    	});
+    	
+    	function fn_rePwdCheck() {
+    		let ret = false;
     		if (rePwd.value == '') {
     			reIcon.setAttribute('class', 'pw_icon check_fail');
     			rePwdCheck.textContent = '필수 정보입니다.';
@@ -242,31 +278,216 @@
     		} else if (rePwd.value == pwd.value){
     			reIcon.setAttribute('class', 'pw_icon check_pass');
     			rePwdCheck.textContent = '';
+    			ret = true;
     		} else {
     			reIcon.setAttribute('class', 'pw_icon check_fail');
     			rePwdCheck.textContent = '비밀번호가 일치하지 않습니다.';
     			rePwdCheck.setAttribute('class', 'check_fail check_subT');
     		}
-    	});
+    		return ret;
+    	}
     	
     	
     	/* name : 입력확인 */
-    	var userName = document.getElementById('user_name');
+    	let userName = document.getElementById('user_name');
+    	let nameCheck = document.getElementById('name_check');
+    	let regName = /^[가-힣a-zA-z]+$/;
+    	
     	userName.addEventListener('blur', function(){
-    		var nameCheck = document.getElementById('name_check');
+    		fn_nameCheck();
+    	});
+    	
+    	function fn_nameCheck() {
+    		let ret = false;
     		if (userName.value == '') {
     			nameCheck.textContent = '필수 정보입니다.';
-    			nameCheck.setAttribute('class', 'check_fail check_subT');
     		} else {
-    			let regName = /^[가-힣a-zA-z]+$/;
     			if (regName.test(userName.value)) {
     				nameCheck.textContent = '';
+    				ret = true;
     			} else {
     				nameCheck.textContent = '한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)';
-    				nameCheck.setAttribute('class', 'check_fail check_subT');
     			}
     		}
+    		return ret;	
+    	}
+    	
+    	
+    	/* birth : 조건 검사 */
+    	// 다시 한번 내용 확인해보기 _gitHub
+    	let yyyy = document.getElementById('yyyy');
+    	let mm = document.getElementById('mm');
+    	let dd = document.getElementById('dd');
+    	let birthCheck = document.getElementById('birth_check');
+	    
+    	yyyy.addEventListener('blur', function(){
+	    	fn_birthdayCheck();	
+	    });
+    	
+    	function fn_birthdayCheck() {
+    		let ret = false;
+    		if (yearCheck() && monthCheck() && dayCheck()) {
+    			birthCheck.textContent = '';
+    			ret = true;
+    		}
+    		return ret;
+    	}
+    	
+    	// yyyy:년 조건검사
+    	function yearCheck() {
+    		let ret;
+    		if (yyyy.value.length < 4) {
+    			birthCheck.textContent = "태어난 년도 4자리를 정확하게 입력하세요.";
+    			birthCheck.setAttribute('class', 'check_fail check_subT');
+    			ret = false;
+    		}
+    		return ret;
+    	}
+    	
+	    // mm:월 조건검사
+	    function monthCheck() {
+	    	let ret;
+	    	if (mm.value = '') {
+	    		birthCheck.textContent = '태어난 월을 선택하세요.';
+	    		ret = false;
+	    	}
+	    	return ret;
+	    }
+	    
+	    // dd:일 조건검사
+	    function dayCheck() {
+	    	let ret;
+	    	let endDays = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+	    	if (dd.value == '' || dd.value > endDays[mm.value]) {
+	    		birthCheck.textContent = '태어난 일(날짜) 2자리를 정확하게 입력하세요.';
+	    		ret = false;
+	    	} else {
+	    		ret = true;
+	    	}
+	    	return ret;
+	    }
+    			
+    	/*--------------------------------------------------------------------------------*/
+    	
+    	
+    	/* 성별체크 */
+    	let gender = document.getElementById('user_gender');
+    	let genderCheck = document.getElementById('gender_check');
+    	
+    	gender.addEventListener('blur', function(){
+    		fn_genderCheck();
     	});
+    	
+    	function fn_genderCheck() {
+    		let ret = false;
+    		if (gender.value == '') {
+	    		genderCheck.textContent = '필수 정보입니다.';
+				genderCheck.setAttribute('class', 'check_fail check_subT');
+    		} else {
+    			genderCheck.textContent = '';
+    			ret = true;
+    		}
+    		return ret;
+    	}
+    			
+    	
+    	/* 이메일 체크 */
+    	let email = document.getElementById('user_email');
+    	let emailCheck = document.getElementById('email_check');
+    	let regEmail = /^[a-z0-9][a-z0-9_-]*@[a-zA-Z0-9]+([.][a-zA-Z]{2,}){1,2}$/;
+    	
+    	email.addEventListener('blur', function(){
+    		fn_emailCheck();
+    	});
+    	
+    	function fn_emailCheck() {
+    		let ret = false;
+    		if (email.value == '' || regEmail.test(email.value)) {  // 선택사항이기 때문에.
+    			emailCheck.textContent = '';
+    			ret = true;
+    		} else {  // 틀리다면
+    			emailCheck.textContent = '이메일 주소를 다시 확인해주세요.';
+    			emailCheck.setAttribute('class', 'check_fail check_subT');
+    		}
+    		return ret;
+    	}
+    	
+    	
+    	/* 휴대전화 체크 */
+    	let mobile2 = document.getElementById('mobile2');
+    	let mobileCheck = document.getElementById('phone_check');
+    	let joinBtn = document.getElementById('join_btn');
+    	let regMobile2 = /^010[0-9]{8}$/;
+    	
+    	mobile2.addEventListener('blur', function(){
+    		fn_mobileCheck();
+    	});
+    	
+    	function fn_mobileCheck() {
+    		let ret = false;
+    		mobile2.value = mobile2.value.split('-').join('');
+    		/* 
+    			mobile2.value = '010-1234-5678'
+    			mobile2.value.split('-') : ['010', '1234', '5678']
+    			mobile2.value.split('-').join('') : '01012345678'
+    		*/
+    		if (mobile2.value == '') {
+    			mobileCheck.textContent = '필수 사항입니다.';
+    			mobileCheck.setAttribute('class', 'check_fail check_subT');
+    			//mobileCheck.style.marginTop = '-5px';
+    		} else if (regMobile2.test(mobile2.value)) {
+    			mobileCheck.innerHTML = '인증번호를 발송했습니다.(유효시간 30분) <br> 인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요. <br> 이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.'
+    			mobileCheck.setAttribute('class', 'check_pass check_subT');
+    			//mobileCheck.style.marginTop = '-5px';
+    			ret = true;
+    		} else {
+    			mobileCheck.textContent = '형식에 맞지 않은 번호입니다.';
+    			mobileCheck.setAttribute('class', 'check_fail check_subT');
+    			//mobileCheck.style.marginTop = '-5px';
+    		}
+    		
+    	}
+    	
+    	
+    	
+    	
+    	
+    	/* join_btn : 가입하기 (버튼) */
+    	// button 태그를 클릭하면, 폼이 서브밋되므로 폼의 submit 이벤트로 작성해도 된다.
+    	// document.getElementById('join_btn').addEventListener('click', function(){  });
+    	// 위와 동일하게 작동하는 코드 (방법2)
+    	document.forms.join_form.addEventListener('submit', function(){  
+    		if (fn_idCheck() &&
+    			fn_pwdCheck() &&
+    			fn_rePwdCheck() &&
+    			fn_nameCheck() &&
+    			fn_birthdayCheck() &&
+    			fn_genderCheck() &&
+    			fn_emailCheck() &&
+    			fn_mobileCheck()) {
+    			if(comfirm('가입할까요?')) {
+    				alert('가입되었습니다');
+    				return true;
+    			} else {
+    				event.preventDefault();
+    				return false;
+    			}
+    		} else {
+    			event.preventDefault();
+    			return false;
+    		}
+    	});
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     	
     	
     	
