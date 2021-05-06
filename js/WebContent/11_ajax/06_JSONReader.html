@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>06_JSON-Reader</title>
+	<script>
+		onload = function() {
+			document.getElementById('get_btn').addEventListener('click', function() {
+				getCar();
+			});
+			function getCar() {
+				var request = new XMLHttpRequest();
+				request.open('get', 'data.json',true);
+				request.send();
+				request.onreadystatechange = function() {
+					if (request.readyState == 4 && request.status == 200) {
+						// ajax 통신으로 받아온 JSON 데이터는 string타입이다.
+						// 객체(object)로 바꿔야 한다.
+						var resText = JSON.parse(request.responseText); // JSON.parse() : string -> JSON(object)로 변경
+						console.log(resText);
+						console.log(typeof resText);  // [request.responseText] : string타입이다. (object타입이 아님)
+						/*  [현재 상태 : 객체 생성_동일]
+							resText = {
+								"model": "520d",
+								"price": 7600,
+								"mDate": "2021-03-05",
+								"company": {
+									"name": "bmw",
+									"country": "germany"
+								},
+								"option": [
+									"HUD",
+									"Advanced Cruise",
+									"AutoHold"
+								]
+							}
+						*/
+						var ul = document.getElementById('receive');
+						
+						/* model */
+						var li = document.createElement('li');
+						li.textContent = resText.model;
+						ul.appendChild(li);
+						
+						/* price */
+						var li = document.createElement('li');
+						li.textContent = resText.price;
+						ul.appendChild(li);
+						
+						/* mDate */
+						var li = document.createElement('li');
+						li.textContent = resText.mDate;
+						ul.appendChild(li);
+						
+						/* company */
+						var li = document.createElement('li');
+						// li.textContent = resText.company.name + ', ' + resText.company.country;
+						var company = resText.company; // "company": { "name": "bmw", "country": "germany" }
+						var result = '';
+						// for-in문
+						for (let p in company) {  // p에 "name"과 "country"가 순서대로 전달된다.
+							// company.p : company."name" company."country"와 같이 되므로 사용이 불가
+							// company[p] : company["name"], company["country"]와 같이 사용한다.
+							result += company[p] + '&nbsp;';
+						}
+						li.innerHTML = result;
+						ul.appendChild(li);
+						
+						/* option */
+						var li = document.createElement('li');
+						var option = resText.option;
+						var result = "";
+						for(let i=0; i<option.length; i++) {
+							result += option[i] + ' ';
+						}
+						li.textContent = result;
+						ul.appendChild(li);
+						
+						
+						
+					} // if문 (end)
+				} // onreadystatechange (end)
+			} // getCar() (end)
+		} // onload (end)
+	</script>
+</head>
+<body>
+	<input type="button" value="자동차 정보 가져오기" id="get_btn">
+	<br><br>
+	<ul id="receive">
+	
+	</ul>
+</body>
+</html>
