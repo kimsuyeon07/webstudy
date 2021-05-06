@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz02</title>
+	<script>
+		// request 객체 생성
+		var request = new XMLHttpRequest();
+		// open()
+		request.open('get', 'quiz02.xml',true);
+		// send()
+		request.send();
+		// 오류검사
+		request.onreadystatechange = function() {
+			/* 오류가 나지 않으면 시작하겠다. */
+			if (request.readyState == 4 && request.status == 200) {
+				// [xml 파일] 내용 가져오기
+				var resXML = request.responseXML;
+				console.log(resXML);
+				// [xml 파일] 내용 배열로 생성
+				var items = resXML.getElementsByTagName('item');
+				/* <tbody>태그에 <tr>/<td>태그 삽입 */
+				for (let i=0; i<items.length; i++) {
+					// <tr>
+					var tr = document.createElement('tr');
+					// <td> : [xml 파일]의 내용 삽입 및 <tr>에 삽입
+					var item = items[i];
+					/* title */
+					var td = document.createElement('td');
+					td.innerHTML = item.getElementsByTagName('title')[0].textContent;
+					tr.appendChild(td);
+					/* description */
+					var td = document.createElement('td');
+					td.innerHTML = item.getElementsByTagName('description')[0].textContent;
+					tr.appendChild(td);
+					/* link : 를 만들어주자 */
+					var td = document.createElement('td');
+					var a= document.createElement('a');
+					a.setAttribute('href', item.getElementsByTagName('link')[0].textContent);
+					a.textContent = '링크';
+					td.appendChild(a);
+					tr.appendChild(td);
+					/* pubDate */
+					var td = document.createElement('td');
+					td.innerHTML = item.getElementsByTagName('pubDate')[0].textContent;
+					tr.appendChild(td);
+					
+					document.getElementById('receive').appendChild(tr);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>제목</td>
+				<td>내용</td>
+				<td>링크</td>
+				<td>작성일</td>
+			</tr>
+		</thead>
+		<tbody id="receive"></tbody>
+	</table>
+</body>
+</html>

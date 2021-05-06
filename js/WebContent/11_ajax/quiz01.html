@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz01</title>
+	<script>
+		onload = function() {
+			
+			// request객체 생성
+			var request = new XMLHttpRequest();
+			// request객체에 (xml파일) 읽어들이기 [열기] 
+			request.open('get','quiz01.xml', true);
+			// request객체로 전송?
+			request.send();
+			// 오류 검사
+			
+			request.onreadystatechange = function() {
+				
+				/* 전송에 오류가 나지 않았다면, */
+				if(request.readyState == 4 && request.status == 200) {
+					// (xml파일)의 내용 가져오기
+					var resXML = request.responseXML;
+					// (xml파일)의 태그 별로 함수 생성
+					var people = resXML.getElementsByTagName('person');  // <tr>을 생성하기 위해서 (사람의 수)
+					
+					// <tbody>의 <tr>/<td>생성  
+					for (let i=0; i<people.length; i++) {
+						
+						var name = people[i].getElementsByTagName('name')[0];
+						var age = people[i].getElementsByTagName('age')[0];
+						var address = people[i].getElementsByTagName('address')[0];
+						var tel = people[i].getElementsByTagName('tel')[0];
+						
+						/* <tr>안에 <td>생성 */
+						var tr = document.createElement('tr');
+						document.getElementById('recive').appendChild(tr);
+						
+						var td = document.createElement('td');
+						td.textContent = name.textContent;
+						tr.appendChild(td);
+						var td = document.createElement('td');
+						td.textContent = age.textContent;
+						tr.appendChild(td);
+						var td = document.createElement('td');
+						td.textContent = address.textContent;
+						tr.appendChild(td);
+						var td = document.createElement('td');
+						td.textContent = tel.textContent;
+						tr.appendChild(td);
+							
+					}
+					
+				}
+			}
+			
+			
+		}
+	</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>이름</td>
+				<td>나이</td>
+				<td>주소</td>
+				<td>연락처</td>
+			</tr>
+		</thead>
+		<tbody id="recive"></tbody>
+	</table>
+</body>
+</html>
