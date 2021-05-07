@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+	
+		// 속성
+		// 1. 객체.getAttribute('name')
+		// 	     객체.attr('name')
+		// 2. 객체.setAttribute('name', 'user_id')
+		// 	     객체.attr('name', 'user_id')
+		// 3. 객체.removeAttr('name') : name 속성을 없앤다.
+		
+		// value 속성 (<form>요소에만 있는 속성)
+		// 1. 객체.value
+		// 	     객체.val()
+		// 2. 객체.value = 'myaccount'
+		// 	     객체.val('myaccount')
+		
+		
+		// 페이지 로드 이벤트
+		$(document).ready(function(){
+			
+			// 실습
+			/* 조회 */
+			console.log($('input[type=text]').attr('name'));  // 확인용 
+			console.log($('input[type=password]').val());
+			console.log($( $('input[type=radio]')[1] ).val());  // 배열함수 사용방법
+			console.log($('input[type=radio]:checked').val());
+			
+			/* 수정 */
+			$('input[type=radio]:checked').val('남자');
+			/* 조회 */ console.log($('input[type=radio]:checked').val());
+			
+			/* 수정 */
+			$('input[type=password]').attr('name','pwd');
+			/* 조회 */ console.log( $('input[type=password]').attr('name') );
+			
+		})
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="id" value="admin"> <br>
+		<input type="password" name="pw" value="1234"> <br>
+		<input type="radio" name="gender" value="male" checked> 남
+		<input type="radio" name="gender" value="female">여
+	</form>
+</body>
+</html>
