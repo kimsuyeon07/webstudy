@@ -16,12 +16,15 @@
 				dataType: 'text',  // 받아 오는 데이터의 타입
 				type: 'get',  // 요청 방식
 				async: true,  // 비동기 통신 (디폴트이므로 생략 가능)
-				success: function(data) { // 통신에 성공하면 data에 받아온 데이터가 저장된다.
-					
+				success: function(responseText) {   // 통신에 성공하면 responseText에 받아온 데이터가 저장된다.
+					console.log(responseText);
 				},
-				
-				
+				error: function(e) {
+					console.log(e);
+				}
 			})
+				
+				
 			
 		})
 		
