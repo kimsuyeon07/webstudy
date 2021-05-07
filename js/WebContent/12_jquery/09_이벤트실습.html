@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			var $btn = $('input[type=button]');
+			var $answer = $('#answer');
+			
+			// 클래스 주기
+			$answer.addClass('blind');
+			
+			// 버튼 클리하면 '.blind'가 추가됬다가 제거되었다 반복하게 
+			$btn.on('click', function(){
+				$answer.toggleClass('blind');
+			})
+			
+		/*  ↑↑
+			// 학습을 위해
+			if ($answer.hasClass('blind')) {
+				$answer.removeClass('blind');
+			} else {
+				$answer.addClass('blind');
+			}
+		*/
+			
+			
+		})
+	</script>
+	<style>
+		.blind {
+			display: none;
+		}
+	</style>
+	
+</head>
+<body>
+	<h3>여기는 어디?</h3>
+	<input type="button" id="btn" value="정답보기">
+	<div id="answer">신촌!</div>
+	
+</body>
+</html>

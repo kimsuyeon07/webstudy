@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		
+		// 페이지 로드 이벤트
+	$(function() {
+		
+		var $form = $('form');
+		$form.on('submit', function(event){
+			event.preventDefault(); // 원래 동작 방지
+			
+			/* #(this) == $form */
+			const id = $( $(this).chidren()[0] ).val();
+			const pw = $(this).chidren().eq(1).val();
+			
+			$('#result').text(id + ', ' + pw);
+		})
+		
+		
+	})
+		
+		
+	
+	
+	</script>
+</head>
+<body>
+
+	<form action="index.html">
+		<input type="text" id="id">
+		<input type="password" id="pw">
+		<button>전송</button>
+	</form>
+	<div id="result"></div>
+	
+</body>
+</html>

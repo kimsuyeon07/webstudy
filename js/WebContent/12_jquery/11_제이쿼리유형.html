@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		$(function() {
+		
+			//배열
+			const season = ['봄','여름','가을','겨울'];
+			
+			//<ul>태그 생성
+			const $ul = $('<ul></ul>');
+			const $content = $('#content');
+			$content.append($ul);
+			
+			
+			// $.each(배열, function(인덱스, 저장된 각각의 요소){  })  // 알아서 동작하는 바복문!
+			$.each(season, function(i, item){
+				// console.log(i, item);
+				$('<li>').text(item).appendTo($ul);
+				// $ul.append($('<li>').text(item));
+			});
+			
+			
+		})
+		
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+</html>

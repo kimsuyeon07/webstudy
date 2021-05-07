@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- 제이쿼리 CDN -->
+	<script src="../js/jquery-3.6.0.js"></script>
+	<!-- 제이쿼리 쿠키 CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+	
+	<script>
+	
+		$(function(){
+					
+			// https://cdnjs.com/ [ jquery-cookie @ 1.4.1 ] : 스크립트 링크 복사!
+			// 쿠키 : cookie (웹 브라우저의 저장소)
+			// $cookie()
+				
+			// console.log($.cookie());
+		
+			/* 전송하기 */
+			$('form').on('submit', function(){
+				
+				if($.cookie('send') == 'ok') {
+					alert('이미 전송했습니다.');
+					event.preventDefault();  // 동작 막는 속성
+				} else {
+					$.cookie('send', 'ok');  // 쿠키이름이 send이고 쿠키값이 ok인 정보가 저장된다.
+				}
+			})
+			
+			/* 전송내역 삭제:쿠키삭제 */
+			$('#delete_btn').on('click', function(){
+				if ($.cookie('send') == 'ok') {
+					$.removeCookie('send');
+					console.log($.cookie());
+				}
+			})
+					
+		})
+		
+		
+	</script>
+	
+</head>
+<body>
+
+	<form>
+		<h3>전송할까요?</h3>
+		<lable><input type="radio" name="question" value="y">예</lable>
+		<lable><input type="radio" name="question" value="n">아니오</lable>
+		<br><br>
+		<button id="send_btn">전송하기</button>
+		<input type="button" id="delete_btn" value="전송내역 삭제하기">
+	</form>
+
+
+</body>
+</html>
